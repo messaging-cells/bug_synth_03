@@ -1,0 +1,2123 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 613334d9, gcc 7.4.0-1ubuntu1~18.04.1 -fPIC -Os)
+
+
+-- Parsing `synth.tcl' using frontend `tcl' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: bin_to_disp.v
+Parsing Verilog input from `bin_to_disp.v' to AST representation.
+Generating RTLIL representation for module `\bin_to_disp'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: debouncer.v
+Parsing Verilog input from `debouncer.v' to AST representation.
+Generating RTLIL representation for module `\debounce'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: tree_nand.v
+Parsing Verilog input from `tree_nand.v' to AST representation.
+Generating RTLIL representation for module `\tree_nand'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: calc_redun.v
+Parsing Verilog input from `calc_redun.v' to AST representation.
+Generating RTLIL representation for module `\calc_redun'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: nd_bug_03.v
+Parsing Verilog input from `nd_bug_03.v' to AST representation.
+Generating RTLIL representation for module `\nd_1to2'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: io_bug_03.v
+Parsing Verilog input from `io_bug_03.v' to AST representation.
+Generating RTLIL representation for module `\io_bug_03'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: bug_03.v
+Parsing Verilog input from `bug_03.v' to AST representation.
+Generating RTLIL representation for module `\test_top'.
+Successfully finished Verilog frontend.
+
+8. Executing SYNTH_ICE40 pass.
+
+8.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+8.2. Executing HIERARCHY pass (managing design hierarchy).
+
+8.2.1. Analyzing design hierarchy..
+Top module:  \test_top
+Used module:     \bin_to_disp
+Used module:     \io_bug_03
+Used module:         \calc_redun
+Used module:             \tree_nand
+Used module:     \nd_1to2
+Parameter \WIDTH = 16
+
+8.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\tree_nand'.
+Parameter \WIDTH = 16
+Generating RTLIL representation for module `$paramod\tree_nand\WIDTH=16'.
+Parameter \WIDTH = 16
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=16'.
+Parameter \WIDTH = 4
+
+8.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\tree_nand'.
+Parameter \WIDTH = 4
+Generating RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \ASZ = 6
+Parameter \DSZ = 4
+Parameter \RSZ = 4
+
+8.2.4. Executing AST frontend in derive mode using pre-parsed AST for module `\calc_redun'.
+Parameter \ASZ = 6
+Parameter \DSZ = 4
+Parameter \RSZ = 4
+Generating RTLIL representation for module `$paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4'.
+Parameter \ASZ = 6
+Parameter \DSZ = 4
+Parameter \RSZ = 4
+Found cached RTLIL representation for module `$paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4'.
+Parameter \MIN_ADDR = 0
+Parameter \MAX_ADDR = 55
+Parameter \OPER_1 = 1
+Parameter \REF_VAL_1 = 23
+
+8.2.5. Executing AST frontend in derive mode using pre-parsed AST for module `\io_bug_03'.
+Parameter \MIN_ADDR = 0
+Parameter \MAX_ADDR = 55
+Parameter \OPER_1 = 1
+Parameter \REF_VAL_1 = 23
+Generating RTLIL representation for module `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23'.
+Parameter \OPER_1 = 1
+Parameter \REF_VAL_1 = 23
+
+8.2.6. Executing AST frontend in derive mode using pre-parsed AST for module `\nd_1to2'.
+Parameter \OPER_1 = 1
+Parameter \REF_VAL_1 = 23
+Generating RTLIL representation for module `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23'.
+
+8.2.7. Analyzing design hierarchy..
+Top module:  \test_top
+Used module:     \bin_to_disp
+Used module:     $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23
+Used module:         \calc_redun
+Used module:             $paramod\tree_nand\WIDTH=4
+Used module:                 \tree_nand
+Used module:                     $paramod\tree_nand\WIDTH=16
+Used module:     $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23
+Parameter \WIDTH = 8
+
+8.2.8. Executing AST frontend in derive mode using pre-parsed AST for module `\tree_nand'.
+Parameter \WIDTH = 8
+Generating RTLIL representation for module `$paramod\tree_nand\WIDTH=8'.
+Parameter \WIDTH = 8
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=8'.
+Parameter \WIDTH = 2
+
+8.2.9. Executing AST frontend in derive mode using pre-parsed AST for module `\tree_nand'.
+Parameter \WIDTH = 2
+Generating RTLIL representation for module `$paramod\tree_nand\WIDTH=2'.
+Parameter \WIDTH = 2
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=2'.
+Parameter \ASZ = 6
+Parameter \DSZ = 4
+Parameter \RSZ = 4
+Found cached RTLIL representation for module `$paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4'.
+Parameter \ASZ = 6
+Parameter \DSZ = 4
+Parameter \RSZ = 4
+Found cached RTLIL representation for module `$paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4'.
+
+8.2.10. Analyzing design hierarchy..
+Top module:  \test_top
+Used module:     \bin_to_disp
+Used module:     $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23
+Used module:         $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4
+Used module:             \tree_nand
+Used module:                 $paramod\tree_nand\WIDTH=16
+Used module:                     $paramod\tree_nand\WIDTH=8
+Used module:     $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+Parameter \WIDTH = 4
+Found cached RTLIL representation for module `$paramod\tree_nand\WIDTH=4'.
+
+8.2.11. Analyzing design hierarchy..
+Top module:  \test_top
+Used module:     \bin_to_disp
+Used module:     $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23
+Used module:         $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4
+Used module:             $paramod\tree_nand\WIDTH=4
+Used module:                 $paramod\tree_nand\WIDTH=2
+Used module:     $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23
+
+8.2.12. Analyzing design hierarchy..
+Top module:  \test_top
+Used module:     \bin_to_disp
+Used module:     $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23
+Used module:         $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4
+Used module:             $paramod\tree_nand\WIDTH=4
+Used module:                 $paramod\tree_nand\WIDTH=2
+Used module:     $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23
+Removing unused module `$paramod\tree_nand\WIDTH=8'.
+Removing unused module `$paramod\tree_nand\WIDTH=16'.
+Removing unused module `\io_bug_03'.
+Removing unused module `\nd_1to2'.
+Removing unused module `\calc_redun'.
+Removing unused module `\tree_nand'.
+Removing unused module `\debounce'.
+Removed 7 unused modules.
+Mapping positional arguments of cell $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.r1 ($paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4).
+Mapping positional arguments of cell $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.md_calc_red0 ($paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$382[2].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$381[1].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$380[0].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.t1 ($paramod\tree_nand\WIDTH=4).
+
+8.3. Executing PROC pass (convert processes to netlists).
+
+8.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$bug_03.v:81$207 in module test_top.
+Marked 9 switch rules as full_case in process $proc$nd_bug_03.v:47$481 in module $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.
+Marked 3 switch rules as full_case in process $proc$io_bug_03.v:124$423 in module $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.
+Marked 3 switch rules as full_case in process $proc$io_bug_03.v:79$383 in module $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.
+Marked 1 switch rules as full_case in process $proc$bin_to_disp.v:18$1 in module bin_to_disp.
+Removed a total of 0 dead cases.
+
+8.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 64 assignments to connections.
+
+8.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\test_top.$proc$bug_03.v:54$247'.
+  Set init value: \clk_4 = 1'0
+Found init rule in `\test_top.$proc$bug_03.v:53$246'.
+  Set init value: \clk_3 = 1'0
+Found init rule in `\test_top.$proc$bug_03.v:52$245'.
+  Set init value: \clk_2 = 1'0
+Found init rule in `\test_top.$proc$bug_03.v:51$244'.
+  Set init value: \clk_1 = 1'0
+Found init rule in `\test_top.$proc$bug_03.v:50$243'.
+  Set init value: \clk_0 = 1'0
+Found init rule in `\test_top.$proc$bug_03.v:48$242'.
+  Set init value: \cnt_clk4 = 12'000000000000
+Found init rule in `\test_top.$proc$bug_03.v:47$241'.
+  Set init value: \cnt_clk3 = 8'00000000
+Found init rule in `\test_top.$proc$bug_03.v:46$240'.
+  Set init value: \cnt_clk2 = 6'000000
+Found init rule in `\test_top.$proc$bug_03.v:45$239'.
+  Set init value: \cnt_clk1 = 4'0000
+Found init rule in `\test_top.$proc$bug_03.v:44$238'.
+  Set init value: \cnt_clk0 = 3'000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$573'.
+  Set init value: \bf0_tl_idx = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$572'.
+  Set init value: \bf0_hd_idx = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$571'.
+  Set init value: \bf0ii = 0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:42$570'.
+  Set init value: \rgi0_ack = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:39$569'.
+  Set init value: \rgo0_added_hd = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:38$568'.
+  Set init value: \rgo0_busy = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:37$567'.
+  Set init value: \rgo0_req = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$566'.
+  Set init value: \rgo0_red = 4'0000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$565'.
+  Set init value: \rgo0_dat = 4'0000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$564'.
+  Set init value: \rgo0_dst = 6'000000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$563'.
+  Set init value: \rgo0_src = 6'000000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:33$562'.
+  Set init value: \rg_rdy = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:31$561'.
+  Set init value: \out0_did_ck = 1'0
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:30$560'.
+  Set init value: \out0_ck_dat = 4'1111
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$559'.
+  Set init value: \rg_dbg_disp1 = 4'0000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$558'.
+  Set init value: \rg_dbg_disp0 = 4'0000
+Found init rule in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$557'.
+  Set init value: \rg_dbg_leds = 4'xx00
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:71$465'.
+  Set init value: \inp0_err = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:70$464'.
+  Set init value: \inp0_ck_dat = 4'1111
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:69$463'.
+  Set init value: \inp0_ack = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:64$462'.
+  Set init value: \inp0_redun = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$461'.
+  Set init value: \inp0_red = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$460'.
+  Set init value: \inp0_dat = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$459'.
+  Set init value: \inp0_dst = 6'000000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$458'.
+  Set init value: \inp0_src = 6'000000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:61$457'.
+  Set init value: \inp0_done_cks = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:60$456'.
+  Set init value: \inp0_has_redun = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:59$455'.
+  Set init value: \has_inp0 = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:54$452'.
+  Set init value: \ro0_req = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:53$451'.
+  Set init value: \ro0_red = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:52$450'.
+  Set init value: \ro0_dst = 6'000000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:51$449'.
+  Set init value: \ro0_dat = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:48$446'.
+  Set init value: \ro0_has_red = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:47$445'.
+  Set init value: \ro0_has_dat = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:46$444'.
+  Set init value: \ro0_has_dst = 1'0
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:41$442'.
+  Set init value: \cnt_1 = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:40$441'.
+  Set init value: \cnt_0 = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$439'.
+  Set init value: \rg_dbg_disp1 = 4'0000
+Found init rule in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$438'.
+  Set init value: \rg_dbg_disp0 = 4'0000
+Found init rule in `\bin_to_disp.$proc$bin_to_disp.v:16$2'.
+  Set init value: \r_Hex_Encoding = 7'0000000
+
+8.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+8.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\test_top.$proc$bug_03.v:54$247'.
+Creating decoders for process `\test_top.$proc$bug_03.v:53$246'.
+Creating decoders for process `\test_top.$proc$bug_03.v:52$245'.
+Creating decoders for process `\test_top.$proc$bug_03.v:51$244'.
+Creating decoders for process `\test_top.$proc$bug_03.v:50$243'.
+Creating decoders for process `\test_top.$proc$bug_03.v:48$242'.
+Creating decoders for process `\test_top.$proc$bug_03.v:47$241'.
+Creating decoders for process `\test_top.$proc$bug_03.v:46$240'.
+Creating decoders for process `\test_top.$proc$bug_03.v:45$239'.
+Creating decoders for process `\test_top.$proc$bug_03.v:44$238'.
+Creating decoders for process `\test_top.$proc$bug_03.v:41$237'.
+Creating decoders for process `\test_top.$proc$bug_03.v:81$207'.
+     1/10: $0\cnt_clk4[11:0]
+     2/10: $0\cnt_clk3[7:0]
+     3/10: $0\cnt_clk2[5:0]
+     4/10: $0\cnt_clk1[3:0]
+     5/10: $0\cnt_clk0[2:0]
+     6/10: $0\clk_4[0:0]
+     7/10: $0\clk_3[0:0]
+     8/10: $0\clk_2[0:0]
+     9/10: $0\clk_1[0:0]
+    10/10: $0\clk_0[0:0]
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$573'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$572'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$571'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:42$570'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:39$569'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:38$568'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:37$567'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$566'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$565'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$564'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$563'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:33$562'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:31$561'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:30$560'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$559'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$558'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$557'.
+Creating decoders for process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+     1/46: $4\rg_dbg_leds[0:0]
+     2/46: $3\rg_dbg_leds[0:0]
+     3/46: $2\rg_dbg_leds[0:0]
+     4/46: $2$mem2bits$\bf0_data$nd_bug_03.v:79$471[19:0]$531
+     5/46: $2$mem2bits$\bf0_data$nd_bug_03.v:79$470[19:0]$530
+     6/46: $2$mem2bits$\bf0_data$nd_bug_03.v:79$469[19:0]$529
+     7/46: $2$mem2bits$\bf0_data$nd_bug_03.v:79$468[19:0]$528
+     8/46: $1\rg_dbg_leds[0:0]
+     9/46: $1$mem2bits$\bf0_data$nd_bug_03.v:79$471[19:0]$509
+    10/46: $1$mem2bits$\bf0_data$nd_bug_03.v:79$470[19:0]$508
+    11/46: $1$mem2bits$\bf0_data$nd_bug_03.v:79$469[19:0]$507
+    12/46: $1$mem2bits$\bf0_data$nd_bug_03.v:79$468[19:0]$506
+    13/46: $1\bf0ii[31:0]
+    14/46: $1\rgo0_added_hd[0:0]
+    15/46: $1\rgo0_busy[0:0]
+    16/46: $0\rgo0_added_hd[0:0]
+    17/46: $0\rgo0_busy[0:0]
+    18/46: $0$memwr$\bf0_busy$nd_bug_03.v:62$472_EN[0:0]$488
+    19/46: $0$memwr$\bf0_busy$nd_bug_03.v:62$472_DATA[0:0]$487
+    20/46: $0$memwr$\bf0_busy$nd_bug_03.v:62$472_ADDR[31:0]$486
+    21/46: $0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491
+    22/46: $0$memwr$\bf0_data$nd_bug_03.v:62$473_DATA[19:0]$490
+    23/46: $0$memwr$\bf0_data$nd_bug_03.v:62$473_ADDR[31:0]$489
+    24/46: $0$memwr$\bf0_busy$nd_bug_03.v:70$474_EN[0:0]$494
+    25/46: $0$memwr$\bf0_busy$nd_bug_03.v:70$474_DATA[0:0]$493
+    26/46: $0$memwr$\bf0_busy$nd_bug_03.v:70$474_ADDR[0:0]$492
+    27/46: $0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497
+    28/46: $0$memwr$\bf0_data$nd_bug_03.v:70$475_DATA[19:0]$496
+    29/46: $0$memwr$\bf0_data$nd_bug_03.v:70$475_ADDR[0:0]$495
+    30/46: $0$memwr$\bf0_busy$nd_bug_03.v:79$476_EN[0:0]$500
+    31/46: $0$memwr$\bf0_busy$nd_bug_03.v:79$476_DATA[0:0]$499
+    32/46: $0$memwr$\bf0_busy$nd_bug_03.v:79$476_ADDR[0:0]$498
+    33/46: $0\bf0_tl_idx[0:0]
+    34/46: $0\bf0_hd_idx[0:0]
+    35/46: $0\rgi0_ack[0:0]
+    36/46: $0\rgo0_req[0:0]
+    37/46: $0\rgo0_red[3:0]
+    38/46: $0\rgo0_dat[3:0]
+    39/46: $0\rgo0_dst[5:0]
+    40/46: $0\rgo0_src[5:0]
+    41/46: $0\rg_rdy[0:0]
+    42/46: $0\out0_did_ck[0:0]
+    43/46: $0\out0_ck_dat[3:0]
+    44/46: $0\rg_dbg_disp1[3:0]
+    45/46: $0\rg_dbg_disp0[3:0]
+    46/46: $0\rg_dbg_leds[1:0] [1]
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:71$465'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:70$464'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:69$463'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:64$462'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$461'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$460'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$459'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$458'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:61$457'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:60$456'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:59$455'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:58$454'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:55$453'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:54$452'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:53$451'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:52$450'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:51$449'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:50$448'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:49$447'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:48$446'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:47$445'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:46$444'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:43$443'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:41$442'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:40$441'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:38$440'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$439'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$438'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$437'.
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+     1/13: $0\inp0_err[0:0]
+     2/13: $0\inp0_ck_dat[3:0]
+     3/13: $0\inp0_ack[0:0]
+     4/13: $0\inp0_redun[3:0]
+     5/13: $0\inp0_red[3:0]
+     6/13: $0\inp0_dat[3:0]
+     7/13: $0\inp0_dst[5:0]
+     8/13: $0\inp0_src[5:0]
+     9/13: $0\inp0_done_cks[0:0]
+    10/13: $0\inp0_has_redun[0:0]
+    11/13: $0\has_inp0[0:0]
+    12/13: $0\rg_dbg_disp1[3:0]
+    13/13: $0\rg_dbg_disp0[3:0]
+Creating decoders for process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+     1/9: $0\ro0_req[0:0]
+     2/9: $0\ro0_red[3:0]
+     3/9: $0\ro0_dst[5:0]
+     4/9: $0\ro0_dat[3:0]
+     5/9: $0\ro0_has_red[0:0]
+     6/9: $0\ro0_has_dat[0:0]
+     7/9: $0\ro0_has_dst[0:0]
+     8/9: $0\cnt_1[3:0]
+     9/9: $0\cnt_0[3:0]
+Creating decoders for process `\bin_to_disp.$proc$bin_to_disp.v:16$2'.
+Creating decoders for process `\bin_to_disp.$proc$bin_to_disp.v:18$1'.
+     1/1: $0\r_Hex_Encoding[6:0]
+
+8.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\test_top.\the_reset' from process `\test_top.$proc$bug_03.v:41$237'.
+No latch inferred for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rg_dbg_leds [3:2]' from process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$557'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\err0_case' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:58$454'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_err' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:55$453'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_src' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:50$448'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_busy' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:49$447'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\r_dat1' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:43$443'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\err_mg_redun' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:38$440'.
+No latch inferred for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\rg_dbg_leds' from process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$437'.
+
+8.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\test_top.\cnt_clk0' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1169' with positive edge clock.
+Creating register for signal `\test_top.\cnt_clk1' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1170' with positive edge clock.
+Creating register for signal `\test_top.\cnt_clk2' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1171' with positive edge clock.
+Creating register for signal `\test_top.\cnt_clk3' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1172' with positive edge clock.
+Creating register for signal `\test_top.\cnt_clk4' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1173' with positive edge clock.
+Creating register for signal `\test_top.\clk_0' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1174' with positive edge clock.
+Creating register for signal `\test_top.\clk_1' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1175' with positive edge clock.
+Creating register for signal `\test_top.\clk_2' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1176' with positive edge clock.
+Creating register for signal `\test_top.\clk_3' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1177' with positive edge clock.
+Creating register for signal `\test_top.\clk_4' using process `\test_top.$proc$bug_03.v:81$207'.
+  created $dff cell `$procdff$1178' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rg_dbg_leds [1:0]' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1179' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rg_dbg_disp0' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1180' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rg_dbg_disp1' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1181' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\out0_ck_dat' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1182' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\out0_did_ck' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1183' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rg_rdy' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1184' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_src' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1185' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_dst' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1186' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_dat' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1187' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_red' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1188' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_req' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1189' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_busy' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1190' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgo0_added_hd' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1191' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\rgi0_ack' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1192' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\bf0ii' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1193' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\bf0_hd_idx' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1194' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.\bf0_tl_idx' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1195' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$mem2bits$\bf0_data$nd_bug_03.v:79$468' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1196' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$mem2bits$\bf0_data$nd_bug_03.v:79$469' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1197' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$mem2bits$\bf0_data$nd_bug_03.v:79$470' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1198' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$mem2bits$\bf0_data$nd_bug_03.v:79$471' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1199' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:62$472_ADDR' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1200' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:62$472_DATA' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1201' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:62$472_EN' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1202' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:62$473_ADDR' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1203' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:62$473_DATA' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1204' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:62$473_EN' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1205' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:70$474_ADDR' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1206' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:70$474_DATA' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1207' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:70$474_EN' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1208' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:70$475_ADDR' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1209' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:70$475_DATA' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1210' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_data$nd_bug_03.v:70$475_EN' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1211' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:79$476_ADDR' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1212' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:79$476_DATA' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1213' with positive edge clock.
+Creating register for signal `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$memwr$\bf0_busy$nd_bug_03.v:79$476_EN' using process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+  created $dff cell `$procdff$1214' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\rg_dbg_disp0' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1215' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\rg_dbg_disp1' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1216' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\has_inp0' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1217' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_has_redun' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1218' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_done_cks' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1219' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_src' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1220' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_dst' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1221' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_dat' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1222' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_red' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1223' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_redun' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1224' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_ack' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1225' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_ck_dat' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1226' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\inp0_err' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+  created $dff cell `$procdff$1227' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\cnt_0' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1228' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\cnt_1' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1229' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_has_dst' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1230' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_has_dat' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1231' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_has_red' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1232' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_dat' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1233' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_dst' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1234' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_red' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1235' with positive edge clock.
+Creating register for signal `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.\ro0_req' using process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+  created $dff cell `$procdff$1236' with positive edge clock.
+Creating register for signal `\bin_to_disp.\r_Hex_Encoding' using process `\bin_to_disp.$proc$bin_to_disp.v:18$1'.
+  created $dff cell `$procdff$1237' with positive edge clock.
+
+8.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `test_top.$proc$bug_03.v:54$247'.
+Removing empty process `test_top.$proc$bug_03.v:53$246'.
+Removing empty process `test_top.$proc$bug_03.v:52$245'.
+Removing empty process `test_top.$proc$bug_03.v:51$244'.
+Removing empty process `test_top.$proc$bug_03.v:50$243'.
+Removing empty process `test_top.$proc$bug_03.v:48$242'.
+Removing empty process `test_top.$proc$bug_03.v:47$241'.
+Removing empty process `test_top.$proc$bug_03.v:46$240'.
+Removing empty process `test_top.$proc$bug_03.v:45$239'.
+Removing empty process `test_top.$proc$bug_03.v:44$238'.
+Removing empty process `test_top.$proc$bug_03.v:41$237'.
+Found and cleaned up 5 empty switches in `\test_top.$proc$bug_03.v:81$207'.
+Removing empty process `test_top.$proc$bug_03.v:81$207'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$573'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$572'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:45$571'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:42$570'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:39$569'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:38$568'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:37$567'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$566'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$565'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$564'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:36$563'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:33$562'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:31$561'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:30$560'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$559'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$558'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:29$557'.
+Found and cleaned up 18 empty switches in `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+Removing empty process `$paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.$proc$nd_bug_03.v:47$481'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:71$465'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:70$464'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:69$463'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:64$462'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$461'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$460'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$459'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:62$458'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:61$457'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:60$456'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:59$455'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:58$454'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:55$453'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:54$452'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:53$451'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:52$450'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:51$449'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:50$448'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:49$447'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:48$446'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:47$445'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:46$444'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:43$443'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:41$442'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:40$441'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:38$440'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$439'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$438'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:37$437'.
+Found and cleaned up 9 empty switches in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:124$423'.
+Found and cleaned up 7 empty switches in `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+Removing empty process `$paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.$proc$io_bug_03.v:79$383'.
+Removing empty process `bin_to_disp.$proc$bin_to_disp.v:16$2'.
+Found and cleaned up 1 empty switch in `\bin_to_disp.$proc$bin_to_disp.v:18$1'.
+Removing empty process `bin_to_disp.$proc$bin_to_disp.v:18$1'.
+Cleaned up 40 empty switches.
+
+8.4. Executing FLATTEN pass (flatten design).
+Using template $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23 for cells of type $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.
+Using template $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23 for cells of type $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.
+Using template bin_to_disp for cells of type bin_to_disp.
+Using template $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4 for cells of type $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.
+Using template $paramod\tree_nand\WIDTH=4 for cells of type $paramod\tree_nand\WIDTH=4.
+Using template $paramod\tree_nand\WIDTH=2 for cells of type $paramod\tree_nand\WIDTH=2.
+<suppressed ~30 debug messages>
+No more expansions possible.
+Deleting now unused module $paramod\nd_1to2\OPER_1=1\REF_VAL_1=23.
+Deleting now unused module $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.
+Deleting now unused module $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.
+Deleting now unused module $paramod\tree_nand\WIDTH=4.
+Deleting now unused module $paramod\tree_nand\WIDTH=2.
+Deleting now unused module bin_to_disp.
+
+8.5. Executing TRIBUF pass.
+
+8.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~115 debug messages>
+
+8.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 77 unused cells and 539 unused wires.
+<suppressed ~78 debug messages>
+
+8.9. Executing CHECK pass (checking for obvious problems).
+checking module test_top..
+found and reported 0 problems.
+
+8.10. Executing OPT pass (performing simple optimizations).
+
+8.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+8.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $techmap\gt_BUG_t5.$procmux$689: $techmap\gt_BUG_t5.$1\rgo0_added_hd[0:0] -> 1'0
+      Replacing known input bits on port A of cell $techmap\gt_BUG_t5.$procmux$687: $techmap\gt_BUG_t5.$1\rgo0_added_hd[0:0] -> 1'0
+      Replacing known input bits on port A of cell $techmap\gt_BUG_t5.$procmux$685: $techmap\gt_BUG_t5.$1\rgo0_added_hd[0:0] -> 1'0
+      Replacing known input bits on port B of cell $techmap\gt_BUG_t5.$procmux$890: \gt_BUG_t5.rg_rdy -> 1'1
+      Replacing known input bits on port A of cell $techmap\io_BUG_t5.$procmux$1016: \io_BUG_t5.inp0_done_cks -> 1'0
+      Replacing known input bits on port A of cell $techmap\io_BUG_t5.$procmux$1013: \io_BUG_t5.inp0_done_cks -> 1'0
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1010: \io_BUG_t5.inp0_done_cks -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1023: \io_BUG_t5.inp0_has_redun -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1033: \io_BUG_t5.has_inp0 -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1101: \io_BUG_t5.ro0_has_red -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1114: \io_BUG_t5.ro0_has_dat -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$1124: \io_BUG_t5.ro0_has_dst -> 1'1
+      Replacing known input bits on port B of cell $techmap\io_BUG_t5.$procmux$949: \io_BUG_t5.inp0_err -> 1'1
+      Replacing known input bits on port A of cell $techmap\io_BUG_t5.$procmux$944: \io_BUG_t5.inp0_err -> 1'0
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $techmap\gt_BUG_t5.$procmux$614.
+    dead port 2/2 on $mux $techmap\gt_BUG_t5.$procmux$616.
+    dead port 2/2 on $mux $techmap\gt_BUG_t5.$procmux$618.
+    dead port 2/2 on $mux $techmap\gt_BUG_t5.$procmux$625.
+    dead port 2/2 on $mux $techmap\gt_BUG_t5.$procmux$627.
+    dead port 2/2 on $mux $techmap\gt_BUG_t5.$procmux$633.
+    dead port 1/2 on $mux $techmap\io_BUG_t5.$procmux$1010.
+Removed 7 multiplexer ports.
+<suppressed ~70 debug messages>
+
+8.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+    Consolidated identical input bits for $mux cell $techmap\gt_BUG_t5.$procmux$715:
+      Old ports: A=20'11111111111111111111, B=20'00000000000000000000, Y=$techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491
+      New ports: A=1'1, B=1'0, Y=$techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0]
+      New connections: $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [19:1] = { $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:62$473_EN[19:0]$491 [0] }
+    Consolidated identical input bits for $mux cell $techmap\gt_BUG_t5.$procmux$755:
+      Old ports: A=20'00000000000000000000, B=20'11111111111111111111, Y=$techmap\gt_BUG_t5.$procmux$755_Y
+      New ports: A=1'0, B=1'1, Y=$techmap\gt_BUG_t5.$procmux$755_Y [0]
+      New connections: $techmap\gt_BUG_t5.$procmux$755_Y [19:1] = { $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] $techmap\gt_BUG_t5.$procmux$755_Y [0] }
+    New ctrl vector for $mux cell $techmap\gt_BUG_t5.$procmux$890: { }
+    New ctrl vector for $mux cell $techmap\io_BUG_t5.$procmux$1023: { }
+    New ctrl vector for $mux cell $techmap\io_BUG_t5.$procmux$1033: { }
+    New ctrl vector for $mux cell $techmap\io_BUG_t5.$procmux$1101: { }
+    New ctrl vector for $mux cell $techmap\io_BUG_t5.$procmux$1114: { }
+    New ctrl vector for $mux cell $techmap\io_BUG_t5.$procmux$1124: { }
+  Optimizing cells in module \test_top.
+    Consolidated identical input bits for $mux cell $techmap\gt_BUG_t5.$procmux$757:
+      Old ports: A=20'00000000000000000000, B=$techmap\gt_BUG_t5.$procmux$755_Y, Y=$techmap\gt_BUG_t5.$procmux$757_Y
+      New ports: A=1'0, B=$techmap\gt_BUG_t5.$procmux$755_Y [0], Y=$techmap\gt_BUG_t5.$procmux$757_Y [0]
+      New connections: $techmap\gt_BUG_t5.$procmux$757_Y [19:1] = { $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] $techmap\gt_BUG_t5.$procmux$757_Y [0] }
+  Optimizing cells in module \test_top.
+    Consolidated identical input bits for $mux cell $techmap\gt_BUG_t5.$procmux$759:
+      Old ports: A=20'00000000000000000000, B=$techmap\gt_BUG_t5.$procmux$757_Y, Y=$techmap\gt_BUG_t5.$procmux$759_Y
+      New ports: A=1'0, B=$techmap\gt_BUG_t5.$procmux$757_Y [0], Y=$techmap\gt_BUG_t5.$procmux$759_Y [0]
+      New connections: $techmap\gt_BUG_t5.$procmux$759_Y [19:1] = { $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] $techmap\gt_BUG_t5.$procmux$759_Y [0] }
+  Optimizing cells in module \test_top.
+    Consolidated identical input bits for $mux cell $techmap\gt_BUG_t5.$procmux$761:
+      Old ports: A=20'00000000000000000000, B=$techmap\gt_BUG_t5.$procmux$759_Y, Y=$techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497
+      New ports: A=1'0, B=$techmap\gt_BUG_t5.$procmux$759_Y [0], Y=$techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0]
+      New connections: $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [19:1] = { $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] $techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_EN[19:0]$497 [0] }
+  Optimizing cells in module \test_top.
+Performed a total of 11 changes.
+
+8.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+8.10.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec \cnt_clk1 = 4'0000 to constant driver in module test_top.
+Promoting init spec \cnt_clk2 = 6'000000 to constant driver in module test_top.
+Promoting init spec \cnt_clk4 = 12'000000000000 to constant driver in module test_top.
+Promoting init spec \clk_1 = 1'0 to constant driver in module test_top.
+Promoting init spec \clk_2 = 1'0 to constant driver in module test_top.
+Promoting init spec \clk_4 = 1'0 to constant driver in module test_top.
+Promoting init spec \gt_BUG_t5.bf0ii = 0 to constant driver in module test_top.
+Promoting init spec \gt_BUG_t5.rg_dbg_disp1 = 4'0000 to constant driver in module test_top.
+Promoting init spec \gt_BUG_t5.rg_dbg_disp0 = 4'0000 to constant driver in module test_top.
+Promoted 9 init specs to constant drivers.
+
+8.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 0 unused cells and 45 unused wires.
+<suppressed ~9 debug messages>
+
+8.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~66 debug messages>
+
+8.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+Performed a total of 0 changes.
+
+8.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.10.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.10.16. Finished OPT passes. (There is nothing left to do.)
+
+8.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 address bits (of 1) from memory read port test_top.$techmap\gt_BUG_t5.$memrd$\bf0_busy$nd_bug_03.v:45$478 (gt_BUG_t5.bf0_busy).
+Removed top 1 address bits (of 1) from memory read port test_top.$techmap\gt_BUG_t5.$memrd$\bf0_busy$nd_bug_03.v:45$479 (gt_BUG_t5.bf0_busy).
+Removed top 1 address bits (of 1) from memory read port test_top.$techmap\gt_BUG_t5.$memrd$\bf0_data$nd_bug_03.v:79$532 (gt_BUG_t5.bf0_data).
+Removed top 32 address bits (of 32) from memory write port test_top.$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:62$552 (gt_BUG_t5.bf0_busy).
+Removed top 1 address bits (of 1) from memory write port test_top.$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:70$554 (gt_BUG_t5.bf0_busy).
+Removed top 1 address bits (of 1) from memory write port test_top.$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:79$556 (gt_BUG_t5.bf0_busy).
+Removed top 32 address bits (of 32) from memory write port test_top.$techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:62$553 (gt_BUG_t5.bf0_data).
+Removed top 1 address bits (of 1) from memory write port test_top.$techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:70$555 (gt_BUG_t5.bf0_data).
+Removed top 31 bits (of 32) from port B of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:144$432 ($add).
+Removed top 27 bits (of 32) from port Y of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:144$432 ($add).
+Removed top 28 bits (of 32) from port B of cell test_top.$techmap\io_BUG_t5.$le$io_bug_03.v:144$431 ($le).
+Removed top 31 bits (of 32) from port B of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:102$420 ($add).
+Removed top 28 bits (of 32) from port Y of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:102$420 ($add).
+Removed top 31 bits (of 32) from port B of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:99$419 ($add).
+Removed top 28 bits (of 32) from port Y of cell test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:99$419 ($add).
+Removed cell test_top.$techmap\gt_BUG_t5.$procdff$1212 ($dff).
+Removed top 19 bits (of 20) from FF cell test_top.$techmap\gt_BUG_t5.$procdff$1211 ($dff).
+Removed cell test_top.$techmap\gt_BUG_t5.$procdff$1206 ($dff).
+Removed top 19 bits (of 20) from FF cell test_top.$techmap\gt_BUG_t5.$procdff$1205 ($dff).
+Removed cell test_top.$techmap\gt_BUG_t5.$procdff$1200 ($dff).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$799 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$797 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$793 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$791 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$771 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$769 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$767 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$765 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$751 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$749 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$747 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$745 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$741 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$739 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$737 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$735 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$718 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$712 ($mux).
+Removed cell test_top.$techmap\gt_BUG_t5.$procmux$709 ($mux).
+Removed top 31 bits (of 32) from port B of cell test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537 ($add).
+Removed top 31 bits (of 32) from port Y of cell test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537 ($add).
+Removed top 31 bits (of 32) from port B of cell test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525 ($add).
+Removed top 31 bits (of 32) from port Y of cell test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525 ($add).
+Removed top 27 bits (of 32) from port A of cell test_top.$techmap\gt_BUG_t5.$gt$nd_bug_03.v:69$512 ($gt).
+Removed top 3 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1167_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1166_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1165_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1164_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1163_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1162_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id0.$procmux$1161_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1167_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1166_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1165_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1164_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1163_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1162_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell test_top.$techmap\Id1.$procmux$1161_CMP0 ($eq).
+Removed top 6 bits (of 20) from wire test_top.$techmap\gt_BUG_t5.$0$memwr$\bf0_data$nd_bug_03.v:70$475_DATA[19:0]$496.
+Removed top 31 bits (of 32) from wire test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525_Y.
+Removed top 31 bits (of 32) from wire test_top.$techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537_Y.
+Removed top 6 bits (of 20) from wire test_top.$techmap\gt_BUG_t5.$procmux$765_Y.
+Removed top 6 bits (of 20) from wire test_top.$techmap\gt_BUG_t5.$procmux$767_Y.
+Removed top 6 bits (of 20) from wire test_top.$techmap\gt_BUG_t5.$procmux$769_Y.
+Removed top 28 bits (of 32) from wire test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:102$420_Y.
+Removed top 27 bits (of 32) from wire test_top.$techmap\io_BUG_t5.$add$io_bug_03.v:144$432_Y.
+
+8.12. Executing PEEPOPT pass (run peephole optimizers).
+
+8.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 0 unused cells and 30 unused wires.
+<suppressed ~1 debug messages>
+
+8.14. Executing SHARE pass (SAT-based resource sharing).
+
+8.15. Executing TECHMAP pass (map to technology primitives).
+
+8.15.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+8.15.2. Continuing TECHMAP pass.
+Using template $paramod$af351d3b878a1ed1e86ddaf05d816feddfd9b537\_90_lut_cmp_ for cells of type $le.
+No more expansions possible.
+<suppressed ~60 debug messages>
+
+8.16. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+8.18. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module test_top:
+  creating $macc model for $techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525 ($add).
+  creating $macc model for $techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537 ($add).
+  creating $macc model for $techmap\io_BUG_t5.$add$io_bug_03.v:102$420 ($add).
+  creating $macc model for $techmap\io_BUG_t5.$add$io_bug_03.v:144$432 ($add).
+  creating $macc model for $techmap\io_BUG_t5.$add$io_bug_03.v:99$419 ($add).
+  creating $alu model for $macc $techmap\io_BUG_t5.$add$io_bug_03.v:99$419.
+  creating $alu model for $macc $techmap\io_BUG_t5.$add$io_bug_03.v:144$432.
+  creating $alu model for $macc $techmap\io_BUG_t5.$add$io_bug_03.v:102$420.
+  creating $alu model for $macc $techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537.
+  creating $alu model for $macc $techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525.
+  creating $alu model for $techmap\gt_BUG_t5.$gt$nd_bug_03.v:69$512 ($gt): new $alu
+  creating $alu cell for $techmap\gt_BUG_t5.$gt$nd_bug_03.v:69$512: $auto$alumacc.cc:485:replace_alu$1249
+  creating $alu cell for $techmap\gt_BUG_t5.$add$nd_bug_03.v:70$525: $auto$alumacc.cc:485:replace_alu$1260
+  creating $alu cell for $techmap\gt_BUG_t5.$add$nd_bug_03.v:79$537: $auto$alumacc.cc:485:replace_alu$1263
+  creating $alu cell for $techmap\io_BUG_t5.$add$io_bug_03.v:102$420: $auto$alumacc.cc:485:replace_alu$1266
+  creating $alu cell for $techmap\io_BUG_t5.$add$io_bug_03.v:144$432: $auto$alumacc.cc:485:replace_alu$1269
+  creating $alu cell for $techmap\io_BUG_t5.$add$io_bug_03.v:99$419: $auto$alumacc.cc:485:replace_alu$1272
+  created 6 $alu and 0 $macc cells.
+
+8.19. Executing OPT pass (performing simple optimizations).
+
+8.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~6 debug messages>
+
+8.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+8.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~58 debug messages>
+
+8.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+    New input vector for $reduce_and cell $auto$alumacc.cc:75:get_eq$1254: { $auto$alumacc.cc:501:replace_alu$1250 [0] $auto$alumacc.cc:501:replace_alu$1250 [1] $auto$alumacc.cc:501:replace_alu$1250 [2] $auto$alumacc.cc:501:replace_alu$1250 [3] $auto$alumacc.cc:501:replace_alu$1250 [4] $auto$alumacc.cc:501:replace_alu$1250 [5] }
+    New ctrl vector for $mux cell $techmap\gt_BUG_t5.$ternary$nd_bug_03.v:45$480: { }
+  Optimizing cells in module \test_top.
+Performed a total of 2 changes.
+
+8.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.19.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Removing $techmap\gt_BUG_t5.$procdff$1201 ($dff) from module test_top.
+Removing $techmap\gt_BUG_t5.$procdff$1204 ($dff) from module test_top.
+Removing $techmap\gt_BUG_t5.$procdff$1207 ($dff) from module test_top.
+Replaced 3 DFF cells.
+
+8.19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 16 unused cells and 26 unused wires.
+<suppressed ~18 debug messages>
+
+8.19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.19.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.19.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~53 debug messages>
+
+8.19.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+Performed a total of 0 changes.
+
+8.19.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.19.13. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec \gt_BUG_t5.bf0_tl_idx = 1'0 to constant driver in module test_top.
+Promoting init spec \gt_BUG_t5.bf0_hd_idx = 1'0 to constant driver in module test_top.
+Promoted 2 init specs to constant drivers.
+
+8.19.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.19.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.19.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.19.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~53 debug messages>
+
+8.19.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+Performed a total of 0 changes.
+
+8.19.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.19.20. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.19.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.19.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.19.23. Finished OPT passes. (There is nothing left to do.)
+
+8.20. Executing FSM pass (extract and optimize FSM).
+
+8.20.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking test_top.Id0.r_Hex_Encoding as FSM state register:
+    Users of register don't seem to benefit from recoding.
+    Register has an initialization value.
+Not marking test_top.Id1.r_Hex_Encoding as FSM state register:
+    Users of register don't seem to benefit from recoding.
+    Register has an initialization value.
+Not marking test_top.io_BUG_t5.ro0_dst as FSM state register:
+    Users of register don't seem to benefit from recoding.
+    Register has an initialization value.
+
+8.20.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+8.20.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+8.20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.20.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+8.20.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+8.20.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+8.20.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+8.21. Executing OPT pass (performing simple optimizations).
+
+8.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.21.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.21.5. Finished fast OPT passes.
+
+8.22. Executing MEMORY pass.
+
+8.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+8.22.2. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:62$552' in module `\test_top': merged $dff to cell.
+Checking cell `$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:70$554' in module `\test_top': merged $dff to cell.
+Checking cell `$techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:79$556' in module `\test_top': merged $dff to cell.
+Checking cell `$techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:62$553' in module `\test_top': merged $dff to cell.
+Checking cell `$techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:70$555' in module `\test_top': merged $dff to cell.
+Checking cell `$techmap\gt_BUG_t5.$memrd$\bf0_busy$nd_bug_03.v:45$478' in module `\test_top': no (compatible) $dff found.
+Checking cell `$techmap\gt_BUG_t5.$memrd$\bf0_data$nd_bug_03.v:79$532' in module `\test_top': no (compatible) $dff found.
+
+8.22.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+8.22.4. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating write ports of memory test_top.gt_BUG_t5.bf0_busy by address:
+  New clock domain: posedge \i_clk
+    Port 0 ($techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:62$552) has addr { }.
+      Active bits: 1
+    Port 1 ($techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:70$554) has addr { }.
+      Active bits: 1
+      Merging port 0 into this one.
+      Creating logic for merging DATA and EN ports.
+      Active bits: 1
+    Port 2 ($techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:79$556) has addr { }.
+      Active bits: 1
+      Merging port 1 into this one.
+      Creating logic for merging DATA and EN ports.
+      Active bits: 1
+Consolidating write ports of memory test_top.gt_BUG_t5.bf0_data by address:
+  New clock domain: posedge \i_clk
+    Port 0 ($techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:62$553) has addr { }.
+      Active bits: 11111111111111111111
+    Port 1 ($techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:70$555) has addr { }.
+      Active bits: 11111111111111111111
+      Merging port 0 into this one.
+      Creating logic for merging DATA and EN ports.
+      Active bits: 11111111111111111111
+
+8.22.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.22.6. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\gt_BUG_t5.bf0_busy' in module `\test_top':
+  $techmap\gt_BUG_t5.$memwr$\bf0_busy$nd_bug_03.v:79$556 ($memwr)
+  $techmap\gt_BUG_t5.$memrd$\bf0_busy$nd_bug_03.v:45$478 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\gt_BUG_t5.bf0_data' in module `\test_top':
+  $techmap\gt_BUG_t5.$memwr$\bf0_data$nd_bug_03.v:70$555 ($memwr)
+  $techmap\gt_BUG_t5.$memrd$\bf0_data$nd_bug_03.v:79$532 ($memrd)
+
+8.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.24. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+Processing test_top.gt_BUG_t5.bf0_busy:
+  Properties: ports=2 bits=1 rports=1 wports=1 dbits=1 abits=1 words=1
+  Checking rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1):
+    Bram geometry: abits=8 dbits=16 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M0: awaste=255 dwaste=15 bwaste=4095 waste=4095 efficiency=0
+    Rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1):
+    Bram geometry: abits=9 dbits=8 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=511 dwaste=7 bwaste=4095 waste=4095 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2):
+    Bram geometry: abits=10 dbits=4 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=1023 dwaste=3 bwaste=4095 waste=4095 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3):
+    Bram geometry: abits=11 dbits=2 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=2047 dwaste=1 bwaste=4095 waste=4095 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3) rejected: requirement 'min efficiency 2' not met.
+  No acceptable bram resources found.
+Processing test_top.gt_BUG_t5.bf0_data:
+  Properties: ports=2 bits=20 rports=1 wports=1 dbits=20 abits=1 words=1
+  Checking rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1):
+    Bram geometry: abits=8 dbits=16 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M0: awaste=255 dwaste=12 bwaste=4092 waste=4092 efficiency=0
+    Rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1):
+    Bram geometry: abits=9 dbits=8 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=511 dwaste=4 bwaste=4092 waste=4092 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2):
+    Bram geometry: abits=10 dbits=4 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=1023 dwaste=0 bwaste=4092 waste=4092 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2) rejected: requirement 'min efficiency 2' not met.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3):
+    Bram geometry: abits=11 dbits=2 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=2047 dwaste=0 bwaste=4094 waste=4094 efficiency=0
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3) rejected: requirement 'min efficiency 2' not met.
+  No acceptable bram resources found.
+
+8.25. Executing TECHMAP pass (map to technology primitives).
+
+8.25.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M0'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M123'.
+Successfully finished Verilog frontend.
+
+8.25.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+8.26. Executing ICE40_BRAMINIT pass.
+
+8.27. Executing OPT pass (performing simple optimizations).
+
+8.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~93 debug messages>
+
+8.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+8.27.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 2 unused cells and 51 unused wires.
+<suppressed ~4 debug messages>
+
+8.27.5. Finished fast OPT passes.
+
+8.28. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+Mapping memory cell \gt_BUG_t5.bf0_busy in module \test_top:
+  created 1 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 1 $mux cells.
+  write interface: 1 write mux blocks.
+Mapping memory cell \gt_BUG_t5.bf0_data in module \test_top:
+  created 1 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 1 $mux cells.
+  write interface: 1 write mux blocks.
+
+8.29. Executing OPT pass (performing simple optimizations).
+
+8.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~7 debug messages>
+
+8.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \test_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+8.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \test_top.
+Performed a total of 0 changes.
+
+8.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.29.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+8.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.29.9. Finished OPT passes. (There is nothing left to do.)
+
+8.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+8.31. Executing TECHMAP pass (map to technology primitives).
+
+8.31.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+8.31.2. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+8.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=4\Y_WIDTH=4 for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=4\Y_WIDTH=5 for cells of type $alu.
+Using extmapper simplemap for cells of type $lut.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=5\B_WIDTH=6\Y_WIDTH=6 for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod\_90_pmux\WIDTH=7\S_WIDTH=15 for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~448 debug messages>
+
+8.32. Executing ICE40_OPT pass (performing simple optimizations).
+
+8.32.1. Running ICE40 specific optimizations.
+
+8.32.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~401 debug messages>
+
+8.32.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~534 debug messages>
+Removed a total of 178 cells.
+
+8.32.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 16 unused cells and 245 unused wires.
+<suppressed ~17 debug messages>
+
+8.32.6. Rerunning OPT passes. (Removed registers in this run.)
+
+8.32.7. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1249.slice[0].carry: CO=1'1
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1266.slice[0].carry: CO=\io_BUG_t5.cnt_1 [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1269.slice[0].carry: CO=\io_BUG_t5.inp0_ck_dat [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1269.slice[4].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1272.slice[0].carry: CO=\io_BUG_t5.cnt_0 [0]
+
+8.32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.32.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.32.10. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+8.32.12. Rerunning OPT passes. (Removed registers in this run.)
+
+8.32.13. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1249.slice[1].carry: CO=1'1
+
+8.32.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.32.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.32.16. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 1 unused cells and 0 unused wires.
+<suppressed ~1 debug messages>
+
+8.32.18. Rerunning OPT passes. (Removed registers in this run.)
+
+8.32.19. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1249.slice[2].carry: CO=1'1
+
+8.32.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.32.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.32.22. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 1 unused cells and 0 unused wires.
+<suppressed ~1 debug messages>
+
+8.32.24. Rerunning OPT passes. (Removed registers in this run.)
+
+8.32.25. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) test_top.$auto$alumacc.cc:485:replace_alu$1249.slice[3].carry: CO=$auto$alumacc.cc:485:replace_alu$1249.BB [3]
+
+8.32.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.32.27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.32.28. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 1 unused cells and 0 unused wires.
+<suppressed ~1 debug messages>
+
+8.32.30. Rerunning OPT passes. (Removed registers in this run.)
+
+8.32.31. Running ICE40 specific optimizations.
+
+8.32.32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.32.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.32.34. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.32.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.32.36. Finished OPT passes. (There is nothing left to do.)
+
+8.33. Executing DFFSR2DFF pass (mapping DFFSR cells to simpler FFs).
+
+8.34. Executing DFF2DFFE pass (transform $dff to $dffe where applicable).
+Selected cell types for direct conversion:
+  $_DFF_PP1_ -> $__DFFE_PP1
+  $_DFF_PP0_ -> $__DFFE_PP0
+  $_DFF_PN1_ -> $__DFFE_PN1
+  $_DFF_PN0_ -> $__DFFE_PN0
+  $_DFF_NP1_ -> $__DFFE_NP1
+  $_DFF_NP0_ -> $__DFFE_NP0
+  $_DFF_NN1_ -> $__DFFE_NN1
+  $_DFF_NN0_ -> $__DFFE_NN0
+  $_DFF_N_ -> $_DFFE_NP_
+  $_DFF_P_ -> $_DFFE_PP_
+Transforming FF to FF+Enable cells in module test_top:
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1533 to $_DFFE_PP_ for $0\clk_0[0:0] -> \clk_0.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1534 to $_DFFE_PP_ for $0\clk_3[0:0] -> \clk_3.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1535 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [0] -> \gt_BUG_t5.bf0_data[0] [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1536 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [1] -> \gt_BUG_t5.bf0_data[0] [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1537 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [2] -> \gt_BUG_t5.bf0_data[0] [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1538 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [3] -> \gt_BUG_t5.bf0_data[0] [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1539 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [4] -> \gt_BUG_t5.bf0_data[0] [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1540 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [5] -> \gt_BUG_t5.bf0_data[0] [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1541 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [6] -> \gt_BUG_t5.bf0_data[0] [6].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1542 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [7] -> \gt_BUG_t5.bf0_data[0] [7].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1543 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [8] -> \gt_BUG_t5.bf0_data[0] [8].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1544 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [9] -> \gt_BUG_t5.bf0_data[0] [9].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1545 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [10] -> \gt_BUG_t5.bf0_data[0] [10].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1546 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [11] -> \gt_BUG_t5.bf0_data[0] [11].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1547 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [12] -> \gt_BUG_t5.bf0_data[0] [12].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1548 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [13] -> \gt_BUG_t5.bf0_data[0] [13].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1549 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [14] -> \gt_BUG_t5.bf0_data[0] [14].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1550 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [15] -> \gt_BUG_t5.bf0_data[0] [15].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1551 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [16] -> \gt_BUG_t5.bf0_data[0] [16].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1552 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [17] -> \gt_BUG_t5.bf0_data[0] [17].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1553 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [18] -> \gt_BUG_t5.bf0_data[0] [18].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1554 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_data$wrmux[0][0][0]$y$1415 [19] -> \gt_BUG_t5.bf0_data[0] [19].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1555 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_req[0:0] -> \io_BUG_t5.ro0_req.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1556 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_red[3:0] [0] -> \io_BUG_t5.ro0_red [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1557 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_red[3:0] [1] -> \io_BUG_t5.ro0_red [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1558 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_red[3:0] [2] -> \io_BUG_t5.ro0_red [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1559 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_red[3:0] [3] -> \io_BUG_t5.ro0_red [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1560 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [0] -> \io_BUG_t5.ro0_dst [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1561 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [1] -> \io_BUG_t5.ro0_dst [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1562 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [2] -> \io_BUG_t5.ro0_dst [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1563 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [3] -> \io_BUG_t5.ro0_dst [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1564 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [4] -> \io_BUG_t5.ro0_dst [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1565 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dst[5:0] [5] -> \io_BUG_t5.ro0_dst [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1566 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dat[3:0] [0] -> \io_BUG_t5.ro0_dat [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1567 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dat[3:0] [1] -> \io_BUG_t5.ro0_dat [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1568 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dat[3:0] [2] -> \io_BUG_t5.ro0_dat [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1569 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_dat[3:0] [3] -> \io_BUG_t5.ro0_dat [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1570 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_has_red[0:0] -> \io_BUG_t5.ro0_has_red.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1571 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_has_dat[0:0] -> \io_BUG_t5.ro0_has_dat.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1572 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\ro0_has_dst[0:0] -> \io_BUG_t5.ro0_has_dst.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1573 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_1[3:0] [0] -> \io_BUG_t5.cnt_1 [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1574 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_1[3:0] [1] -> \io_BUG_t5.cnt_1 [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1575 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_1[3:0] [2] -> \io_BUG_t5.cnt_1 [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1576 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_1[3:0] [3] -> \io_BUG_t5.cnt_1 [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1577 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_0[3:0] [0] -> \io_BUG_t5.cnt_0 [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1578 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_0[3:0] [1] -> \io_BUG_t5.cnt_0 [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1579 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_0[3:0] [2] -> \io_BUG_t5.cnt_0 [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1580 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\cnt_0[3:0] [3] -> \io_BUG_t5.cnt_0 [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1581 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_err[0:0] -> \io_BUG_t5.inp0_err.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1582 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_ck_dat[3:0] [0] -> \io_BUG_t5.inp0_ck_dat [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1583 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_ck_dat[3:0] [1] -> \io_BUG_t5.inp0_ck_dat [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1584 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_ck_dat[3:0] [2] -> \io_BUG_t5.inp0_ck_dat [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1585 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_ck_dat[3:0] [3] -> \io_BUG_t5.inp0_ck_dat [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1586 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_ack[0:0] -> \io_BUG_t5.inp0_ack.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1587 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_redun[3:0] [0] -> \io_BUG_t5.inp0_redun [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1588 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_redun[3:0] [1] -> \io_BUG_t5.inp0_redun [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1589 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_redun[3:0] [2] -> \io_BUG_t5.inp0_redun [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1590 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_redun[3:0] [3] -> \io_BUG_t5.inp0_redun [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1591 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_red[3:0] [0] -> \io_BUG_t5.inp0_red [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1592 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_red[3:0] [1] -> \io_BUG_t5.inp0_red [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1593 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_red[3:0] [2] -> \io_BUG_t5.inp0_red [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1594 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_red[3:0] [3] -> \io_BUG_t5.inp0_red [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1595 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dat[3:0] [0] -> \io_BUG_t5.inp0_dat [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1596 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dat[3:0] [1] -> \io_BUG_t5.inp0_dat [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1597 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dat[3:0] [2] -> \io_BUG_t5.inp0_dat [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1598 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dat[3:0] [3] -> \io_BUG_t5.inp0_dat [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1599 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [0] -> \io_BUG_t5.inp0_dst [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1600 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [1] -> \io_BUG_t5.inp0_dst [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1601 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [2] -> \io_BUG_t5.inp0_dst [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1602 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [3] -> \io_BUG_t5.inp0_dst [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1603 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [4] -> \io_BUG_t5.inp0_dst [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1604 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_dst[5:0] [5] -> \io_BUG_t5.inp0_dst [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1605 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [0] -> \io_BUG_t5.inp0_src [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1606 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [1] -> \io_BUG_t5.inp0_src [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1607 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [2] -> \io_BUG_t5.inp0_src [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1608 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [3] -> \io_BUG_t5.inp0_src [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1609 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [4] -> \io_BUG_t5.inp0_src [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1610 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_src[5:0] [5] -> \io_BUG_t5.inp0_src [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1611 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_done_cks[0:0] -> \io_BUG_t5.inp0_done_cks.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1612 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\inp0_has_redun[0:0] -> \io_BUG_t5.inp0_has_redun.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1613 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\has_inp0[0:0] -> \io_BUG_t5.has_inp0.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1614 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp1[3:0] [0] -> \io_BUG_t5.rg_dbg_disp1 [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1615 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp1[3:0] [1] -> \io_BUG_t5.rg_dbg_disp1 [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1616 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp1[3:0] [2] -> \io_BUG_t5.rg_dbg_disp1 [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1617 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp1[3:0] [3] -> \io_BUG_t5.rg_dbg_disp1 [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1618 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp0[3:0] [0] -> \io_BUG_t5.rg_dbg_disp0 [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1619 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp0[3:0] [1] -> \io_BUG_t5.rg_dbg_disp0 [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1620 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp0[3:0] [2] -> \io_BUG_t5.rg_dbg_disp0 [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1621 to $_DFFE_PP_ for $techmap\io_BUG_t5.$0\rg_dbg_disp0[3:0] [3] -> \io_BUG_t5.rg_dbg_disp0 [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1969 to $_DFFE_PP_ for $memory\gt_BUG_t5.bf0_busy$wrmux[0][0][0]$y$1406 -> \gt_BUG_t5.bf0_busy[0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1996 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\out0_did_ck[0:0] -> \gt_BUG_t5.out0_did_ck.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1997 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\out0_ck_dat[3:0] [0] -> \gt_BUG_t5.out0_ck_dat [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1998 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\out0_ck_dat[3:0] [1] -> \gt_BUG_t5.out0_ck_dat [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1999 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\out0_ck_dat[3:0] [2] -> \gt_BUG_t5.out0_ck_dat [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$2000 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\out0_ck_dat[3:0] [3] -> \gt_BUG_t5.out0_ck_dat [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$2001 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\rg_dbg_leds[1:0] [0] -> \gt_BUG_t5.rg_dbg_leds [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$2002 to $_DFFE_PP_ for $techmap\gt_BUG_t5.$0\rg_dbg_leds[1:0] [1] -> \gt_BUG_t5.rg_dbg_leds [1].
+
+8.35. Executing TECHMAP pass (map to technology primitives).
+
+8.35.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Successfully finished Verilog frontend.
+
+8.35.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
+No more expansions possible.
+<suppressed ~147 debug messages>
+
+8.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~494 debug messages>
+
+8.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping test_top.$auto$alumacc.cc:485:replace_alu$1266.slice[0].carry ($lut).
+Mapping test_top.$auto$alumacc.cc:485:replace_alu$1269.slice[0].carry ($lut).
+Mapping test_top.$auto$alumacc.cc:485:replace_alu$1269.slice[4].carry ($lut).
+Mapping test_top.$auto$alumacc.cc:485:replace_alu$1272.slice[0].carry ($lut).
+
+8.38. Executing ICE40_FFINIT pass (implement FF init values).
+Handling FF init values in test_top.
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2201 (SB_DFF): \Id0.r_Hex_Encoding [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1976 (SB_DFF): \gt_BUG_t5.rgo0_red [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2205 (SB_DFF): \Id0.r_Hex_Encoding [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1526 (SB_DFF): \cnt_clk3 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1522 (SB_DFF): \cnt_clk0 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1527 (SB_DFF): \cnt_clk3 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1528 (SB_DFF): \cnt_clk3 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1529 (SB_DFF): \cnt_clk3 [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1530 (SB_DFF): \cnt_clk3 [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1531 (SB_DFF): \cnt_clk3 [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1532 (SB_DFF): \cnt_clk3 [7] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2455 (SB_DFF): \Id1.r_Hex_Encoding [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1525 (SB_DFF): \cnt_clk3 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1533 (SB_DFFE): \clk_0 = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1534 (SB_DFFE): \clk_3 = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1982 (SB_DFF): \gt_BUG_t5.rgo0_dat [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1557 (SB_DFFE): \io_BUG_t5.ro0_red [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1555 (SB_DFFE): \io_BUG_t5.ro0_req = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1558 (SB_DFFE): \io_BUG_t5.ro0_red [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1559 (SB_DFFE): \io_BUG_t5.ro0_red [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1561 (SB_DFFE): \io_BUG_t5.ro0_dst [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1556 (SB_DFFE): \io_BUG_t5.ro0_red [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1562 (SB_DFFE): \io_BUG_t5.ro0_dst [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1563 (SB_DFFE): \io_BUG_t5.ro0_dst [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1564 (SB_DFFE): \io_BUG_t5.ro0_dst [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1565 (SB_DFFE): \io_BUG_t5.ro0_dst [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1567 (SB_DFFE): \io_BUG_t5.ro0_dat [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1560 (SB_DFFE): \io_BUG_t5.ro0_dst [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1568 (SB_DFFE): \io_BUG_t5.ro0_dat [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1569 (SB_DFFE): \io_BUG_t5.ro0_dat [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1574 (SB_DFFE): \io_BUG_t5.cnt_1 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1566 (SB_DFFE): \io_BUG_t5.ro0_dat [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1570 (SB_DFFE): \io_BUG_t5.ro0_has_red = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1571 (SB_DFFE): \io_BUG_t5.ro0_has_dat = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1572 (SB_DFFE): \io_BUG_t5.ro0_has_dst = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1575 (SB_DFFE): \io_BUG_t5.cnt_1 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1576 (SB_DFFE): \io_BUG_t5.cnt_1 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1578 (SB_DFFE): \io_BUG_t5.cnt_0 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1573 (SB_DFFE): \io_BUG_t5.cnt_1 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1579 (SB_DFFE): \io_BUG_t5.cnt_0 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1580 (SB_DFFE): \io_BUG_t5.cnt_0 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1583 (SB_DFFE): \io_BUG_t5.inp0_ck_dat [1] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1577 (SB_DFFE): \io_BUG_t5.cnt_0 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1581 (SB_DFFE): \io_BUG_t5.inp0_err = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1584 (SB_DFFE): \io_BUG_t5.inp0_ck_dat [2] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1585 (SB_DFFE): \io_BUG_t5.inp0_ck_dat [3] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1588 (SB_DFFE): \io_BUG_t5.inp0_redun [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1582 (SB_DFFE): \io_BUG_t5.inp0_ck_dat [0] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1586 (SB_DFFE): \io_BUG_t5.inp0_ack = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1589 (SB_DFFE): \io_BUG_t5.inp0_redun [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1590 (SB_DFFE): \io_BUG_t5.inp0_redun [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1592 (SB_DFFE): \io_BUG_t5.inp0_red [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1587 (SB_DFFE): \io_BUG_t5.inp0_redun [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1593 (SB_DFFE): \io_BUG_t5.inp0_red [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1594 (SB_DFFE): \io_BUG_t5.inp0_red [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1596 (SB_DFFE): \io_BUG_t5.inp0_dat [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1591 (SB_DFFE): \io_BUG_t5.inp0_red [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1597 (SB_DFFE): \io_BUG_t5.inp0_dat [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1598 (SB_DFFE): \io_BUG_t5.inp0_dat [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1600 (SB_DFFE): \io_BUG_t5.inp0_dst [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1595 (SB_DFFE): \io_BUG_t5.inp0_dat [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1601 (SB_DFFE): \io_BUG_t5.inp0_dst [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1602 (SB_DFFE): \io_BUG_t5.inp0_dst [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1603 (SB_DFFE): \io_BUG_t5.inp0_dst [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1604 (SB_DFFE): \io_BUG_t5.inp0_dst [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1606 (SB_DFFE): \io_BUG_t5.inp0_src [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1599 (SB_DFFE): \io_BUG_t5.inp0_dst [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1607 (SB_DFFE): \io_BUG_t5.inp0_src [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1608 (SB_DFFE): \io_BUG_t5.inp0_src [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1609 (SB_DFFE): \io_BUG_t5.inp0_src [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1610 (SB_DFFE): \io_BUG_t5.inp0_src [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1615 (SB_DFFE): \io_BUG_t5.rg_dbg_disp1 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1605 (SB_DFFE): \io_BUG_t5.inp0_src [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1611 (SB_DFFE): \io_BUG_t5.inp0_done_cks = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1612 (SB_DFFE): \io_BUG_t5.inp0_has_redun = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1613 (SB_DFFE): \io_BUG_t5.has_inp0 = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1616 (SB_DFFE): \io_BUG_t5.rg_dbg_disp1 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1617 (SB_DFFE): \io_BUG_t5.rg_dbg_disp1 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1619 (SB_DFFE): \io_BUG_t5.rg_dbg_disp0 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1614 (SB_DFFE): \io_BUG_t5.rg_dbg_disp1 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1620 (SB_DFFE): \io_BUG_t5.rg_dbg_disp0 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1621 (SB_DFFE): \io_BUG_t5.rg_dbg_disp0 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1523 (SB_DFF): \cnt_clk0 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1971 (SB_DFF): \gt_BUG_t5.rgi0_ack = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1972 (SB_DFF): \gt_BUG_t5.rgo0_added_hd = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1973 (SB_DFF): \gt_BUG_t5.rgo0_busy = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1974 (SB_DFF): \gt_BUG_t5.rgo0_req = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1977 (SB_DFF): \gt_BUG_t5.rgo0_red [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2456 (SB_DFF): \Id1.r_Hex_Encoding [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1975 (SB_DFF): \gt_BUG_t5.rgo0_red [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1985 (SB_DFF): \gt_BUG_t5.rgo0_dst [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1980 (SB_DFF): \gt_BUG_t5.rgo0_dat [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1981 (SB_DFF): \gt_BUG_t5.rgo0_dat [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1979 (SB_DFF): \gt_BUG_t5.rgo0_dat [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1986 (SB_DFF): \gt_BUG_t5.rgo0_dst [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2002 (SB_DFFE): \gt_BUG_t5.rg_dbg_leds [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1993 (SB_DFF): \gt_BUG_t5.rgo0_src [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1998 (SB_DFFE): \gt_BUG_t5.out0_ck_dat [1] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1987 (SB_DFF): \gt_BUG_t5.rgo0_dst [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1983 (SB_DFF): \gt_BUG_t5.rgo0_dst [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2000 (SB_DFFE): \gt_BUG_t5.out0_ck_dat [3] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1990 (SB_DFF): \gt_BUG_t5.rgo0_src [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1978 (SB_DFF): \gt_BUG_t5.rgo0_red [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1992 (SB_DFF): \gt_BUG_t5.rgo0_src [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1984 (SB_DFF): \gt_BUG_t5.rgo0_dst [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1989 (SB_DFF): \gt_BUG_t5.rgo0_src [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1995 (SB_DFF): \gt_BUG_t5.rg_rdy = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1996 (SB_DFFE): \gt_BUG_t5.out0_did_ck = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1994 (SB_DFF): \gt_BUG_t5.rgo0_src [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1988 (SB_DFF): \gt_BUG_t5.rgo0_dst [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1999 (SB_DFFE): \gt_BUG_t5.out0_ck_dat [2] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1997 (SB_DFFE): \gt_BUG_t5.out0_ck_dat [0] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1991 (SB_DFF): \gt_BUG_t5.rgo0_src [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2001 (SB_DFFE): \gt_BUG_t5.rg_dbg_leds [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1524 (SB_DFF): \cnt_clk0 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2200 (SB_DFF): \Id0.r_Hex_Encoding [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1618 (SB_DFFE): \io_BUG_t5.rg_dbg_disp0 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2202 (SB_DFF): \Id0.r_Hex_Encoding [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2203 (SB_DFF): \Id0.r_Hex_Encoding [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2204 (SB_DFF): \Id0.r_Hex_Encoding [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2199 (SB_DFF): \Id0.r_Hex_Encoding [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2457 (SB_DFF): \Id1.r_Hex_Encoding [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2458 (SB_DFF): \Id1.r_Hex_Encoding [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2459 (SB_DFF): \Id1.r_Hex_Encoding [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2460 (SB_DFF): \Id1.r_Hex_Encoding [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2461 (SB_DFF): \Id1.r_Hex_Encoding [6] = 0
+
+8.39. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
+Merging set/reset $_MUX_ cells into SB_FFs in test_top.
+  Merging $auto$simplemap.cc:277:simplemap_mux$2744 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2435_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2201 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2748 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2439_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2205 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1468 (A=1'0, B=\cnt_clk3 [0], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1526 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1469 (A=1'0, B=\cnt_clk3 [1], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1527 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1470 (A=1'0, B=\cnt_clk3 [2], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1528 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1471 (A=1'0, B=\cnt_clk3 [3], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1529 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1472 (A=1'0, B=\cnt_clk3 [4], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1530 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1473 (A=1'0, B=\cnt_clk3 [5], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1531 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1474 (A=1'0, B=\cnt_clk3 [6], S=$auto$simplemap.cc:168:logic_reduce$1490) into $auto$simplemap.cc:420:simplemap_dff$1532 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3016 (A=1'0, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2433_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2455 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2099 (A=1'0, B=$techmap\gt_BUG_t5.$procmux$689_Y, S=\gt_BUG_t5.rg_rdy) into $auto$simplemap.cc:420:simplemap_dff$1549 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2099 (A=1'0, B=$techmap\gt_BUG_t5.$procmux$689_Y, S=\gt_BUG_t5.rg_rdy) into $auto$simplemap.cc:420:simplemap_dff$1552 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1863 (A=$techmap\io_BUG_t5.$procmux$947_Y, B=1'1, S=\io_BUG_t5.inp0_err) into $auto$simplemap.cc:420:simplemap_dff$1581 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1764 (A=$techmap\io_BUG_t5.$procmux$1016_Y, B=1'0, S=\io_BUG_t5.inp0_done_cks) into $auto$simplemap.cc:420:simplemap_dff$1611 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1465 (A=1'0, B=\cnt_clk0 [0], S=$auto$simplemap.cc:168:logic_reduce$1478) into $auto$simplemap.cc:420:simplemap_dff$1523 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3017 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2434_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2456 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1466 (A=1'0, B=\cnt_clk0 [1], S=$auto$simplemap.cc:168:logic_reduce$1478) into $auto$simplemap.cc:420:simplemap_dff$1524 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2743 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2434_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2200 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2745 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2436_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2202 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2746 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2437_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2203 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2747 (A=1'1, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2438_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2204 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$2742 (A=1'0, B=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2433_Y, S=$techmap$techmap\Id0.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2199 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3018 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2435_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2457 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3019 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2436_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2458 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3020 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2437_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2459 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3021 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2438_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2460 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$3022 (A=1'1, B=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:441$2439_Y, S=$techmap$techmap\Id1.$procmux$1152.$reduce_or$/usr/local/bin/../share/yosys/techmap.v:445$2416_Y) into $auto$simplemap.cc:420:simplemap_dff$2461 (SB_DFF).
+
+8.40. Executing ICE40_OPT pass (performing simple optimizations).
+
+8.40.1. Running ICE40 specific optimizations.
+
+8.40.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+<suppressed ~105 debug messages>
+
+8.40.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+<suppressed ~2445 debug messages>
+Removed a total of 815 cells.
+
+8.40.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.40.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+Removed 26 unused cells and 1567 unused wires.
+<suppressed ~27 debug messages>
+
+8.40.6. Rerunning OPT passes. (Removed registers in this run.)
+
+8.40.7. Running ICE40 specific optimizations.
+
+8.40.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module test_top.
+
+8.40.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\test_top'.
+Removed a total of 0 cells.
+
+8.40.10. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.40.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \test_top..
+
+8.40.12. Finished OPT passes. (There is nothing left to do.)
+
+8.41. Executing TECHMAP pass (map to technology primitives).
+
+8.41.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+8.41.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+8.42. Executing ABC pass (technology mapping using ABC).
+
+8.42.1. Extracting gate netlist of module `\test_top' to `<abc-temp-dir>/input.blif'..
+Extracted 607 gates and 760 wires to a netlist network with 151 inputs and 134 outputs.
+
+8.42.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress 
+ABC: Total number of equiv classes                =     143.
+ABC: Participating nodes from both networks       =     351.
+ABC: Participating nodes from the first network   =     145. (  92.95 % of nodes)
+ABC: Participating nodes from the second network  =     206. ( 132.05 % of nodes)
+ABC: Node pairs (any polarity)                    =     145. (  92.95 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     140. (  89.74 % of names can be moved)
+ABC: Total runtime =     0.01 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.42.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      155
+ABC RESULTS:        internal signals:      475
+ABC RESULTS:           input signals:      151
+ABC RESULTS:          output signals:      134
+Removing temp directory.
+
+8.43. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+8.44. Executing TECHMAP pass (map to technology primitives).
+
+8.44.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Successfully finished Verilog frontend.
+
+8.44.2. Continuing TECHMAP pass.
+No more expansions possible.
+Removed 4 unused cells and 543 unused wires.
+
+8.45. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      162
+  1-LUT               35
+  2-LUT               21
+  3-LUT               29
+  4-LUT               77
+  with \SB_CARRY       7
+
+Eliminating LUTs.
+Number of LUTs:      162
+  1-LUT               35
+  2-LUT               21
+  3-LUT               29
+  4-LUT               77
+  with \SB_CARRY       7
+
+Combining LUTs.
+Number of LUTs:      162
+  1-LUT               35
+  2-LUT               21
+  3-LUT               29
+  4-LUT               77
+  with \SB_CARRY       7
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~439 debug messages>
+
+8.46. Executing TECHMAP pass (map to technology primitives).
+
+8.46.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+8.46.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0110100110010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011111101001100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0110011100011110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100100011111100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011011111111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1001000000001001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000010111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001010000101000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100101000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011101000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111100010001000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000011100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111100011111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110011111111100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0110011111111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100111111111100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11000010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10000000 for cells of type $lut.
+No more expansions possible.
+<suppressed ~695 debug messages>
+Removed 0 unused cells and 324 unused wires.
+
+8.47. Executing AUTONAME pass.
+Renamed 1701 objects in module test_top (25 iterations).
+<suppressed ~465 debug messages>
+
+8.48. Executing HIERARCHY pass (managing design hierarchy).
+
+8.48.1. Analyzing design hierarchy..
+Top module:  \test_top
+
+8.48.2. Analyzing design hierarchy..
+Top module:  \test_top
+Removed 0 unused modules.
+
+8.49. Printing statistics.
+
+=== test_top ===
+
+   Number of wires:                345
+   Number of wire bits:            796
+   Number of public wires:         345
+   Number of public wire bits:     796
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                318
+     SB_CARRY                        9
+     SB_DFF                         27
+     SB_DFFE                        93
+     SB_DFFESR                       3
+     SB_DFFESS                       1
+     SB_DFFSR                       11
+     SB_DFFSS                       12
+     SB_LUT4                       162
+
+8.50. Executing CHECK pass (checking for obvious problems).
+checking module test_top..
+found and reported 0 problems.
+
+8.51. Executing JSON backend.
+
+End of script. Logfile hash: 88b4036110
+CPU: user 3.65s system 0.04s, MEM: 63.87 MB total, 23.73 MB resident
+Yosys 0.9+932 (git sha1 613334d9, gcc 7.4.0-1ubuntu1~18.04.1 -fPIC -Os)
+Time spent: 27% 22x opt_expr (1 sec), 18% 23x opt_clean (0 sec), ...
