@@ -8,3 +8,5 @@ read_verilog nd_bug_03.v; # tested module
 read_verilog io_bug_03.v; # tester module
 read_verilog bug_03.v;  # top module
 synth_ice40 -top test_top -json ../$::env(BUILD_DIR)/bug_03.json;
+write_ilang ../$::env(BUILD_DIR)/bug_03.ilang;
+# write_verilog ../$::env(BUILD_DIR)/bug_03.verilog;

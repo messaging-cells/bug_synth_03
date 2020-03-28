@@ -2117,7 +2117,10 @@ found and reported 0 problems.
 
 8.51. Executing JSON backend.
 
-End of script. Logfile hash: 88b4036110
-CPU: user 3.65s system 0.04s, MEM: 63.87 MB total, 23.73 MB resident
+9. Executing ILANG backend.
+Output filename: ../build/bug_03.ilang
+
+End of script. Logfile hash: 649c8294f9
+CPU: user 4.03s system 0.08s, MEM: 63.88 MB total, 23.81 MB resident
 Yosys 0.9+932 (git sha1 613334d9, gcc 7.4.0-1ubuntu1~18.04.1 -fPIC -Os)
 Time spent: 27% 22x opt_expr (1 sec), 18% 23x opt_clean (0 sec), ...
