@@ -27,10 +27,10 @@ module io_bug_03
 	input wire snk0_clk,
 	
 	// SRC
-	`NS_DECLARE_OUT_CHNL(o0)
+	`NS_DECLARE_OUT_CHNL(o0),
 	
 	// SNK_0
-	`NS_DECLARE_IN_CHNL(i0)
+	`NS_DECLARE_IN_CHNL(i0),
 	
 	`NS_DECLARE_DBG_CHNL(dbg)
 );

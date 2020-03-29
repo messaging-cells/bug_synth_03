@@ -15622,7 +15622,7 @@
           "hide_name": 0,
           "bits": [ 223, 224, 225, 226, 231, 230, 229, 228, 236, 235, 234, 233, 283, 282, 281, 280 ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:21"
+            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:20"
           }
         },
         "io_BUG_t5.md_calc_red0.mg_dat": {
@@ -15657,28 +15657,28 @@
           "hide_name": 0,
           "bits": [ 283, 282, 281, 280 ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:10"
           }
         },
         "io_BUG_t5.md_calc_red0.t1.out_nand": {
           "hide_name": 0,
           "bits": [ 279 ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:11"
+            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:11"
           }
         },
         "io_BUG_t5.md_calc_red0.t1.tree_nand_high.in_nand": {
           "hide_name": 0,
           "bits": [ 281, 280 ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:27|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:27|tree_nand.v:10"
           }
         },
         "io_BUG_t5.md_calc_red0.t1.tree_nand_low.in_nand": {
           "hide_name": 0,
           "bits": [ 283, 282 ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:24|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:24|tree_nand.v:10"
           }
         },
         "io_BUG_t5.o0_ack": {
@@ -15761,56 +15761,56 @@
           "hide_name": 0,
           "bits": [ "0", "1", "0", "0" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:10"
           }
         },
         "io_BUG_t5.r1.t1.out_nand": {
           "hide_name": 0,
           "bits": [ "0" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:11"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:11"
           }
         },
         "io_BUG_t5.r1.t1.out_nand_high": {
           "hide_name": 0,
           "bits": [ "1" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:23"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:23"
           }
         },
         "io_BUG_t5.r1.t1.out_nand_low": {
           "hide_name": 0,
           "bits": [ "1" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:22"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:22"
           }
         },
         "io_BUG_t5.r1.t1.tree_nand_high.in_nand": {
           "hide_name": 0,
           "bits": [ "0", "0" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:27|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:27|tree_nand.v:10"
           }
         },
         "io_BUG_t5.r1.t1.tree_nand_high.out_nand": {
           "hide_name": 0,
           "bits": [ "1" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:27|tree_nand.v:11"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:27|tree_nand.v:11"
           }
         },
         "io_BUG_t5.r1.t1.tree_nand_low.in_nand": {
           "hide_name": 0,
           "bits": [ "0", "1" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:24|tree_nand.v:10"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:24|tree_nand.v:10"
           }
         },
         "io_BUG_t5.r1.t1.tree_nand_low.out_nand": {
           "hide_name": 0,
           "bits": [ "1" ],
           "attributes": {
-            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:24|tree_nand.v:11"
+            "src": "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:24|tree_nand.v:11"
           }
         },
         "io_BUG_t5.r_dat1": {

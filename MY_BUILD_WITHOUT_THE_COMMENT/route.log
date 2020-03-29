@@ -84,7 +84,7 @@ Info:     at iteration #5, type ALL: wirelen solved = 234, spread = 457, legal =
 Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 290, spread = 494, legal = 907; time = 0.02s
 Info:     at iteration #6, type SB_GB: wirelen solved = 899, spread = 902, legal = 907; time = 0.00s
 Info:     at iteration #6, type ALL: wirelen solved = 242, spread = 421, legal = 953; time = 0.02s
-Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 287, spread = 478, legal = 895; time = 0.02s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 287, spread = 478, legal = 895; time = 0.01s
 Info:     at iteration #7, type SB_GB: wirelen solved = 887, spread = 891, legal = 895; time = 0.00s
 Info:     at iteration #7, type ALL: wirelen solved = 230, spread = 423, legal = 821; time = 0.02s
 Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 310, spread = 473, legal = 834; time = 0.02s
@@ -98,10 +98,10 @@ Info:     at iteration #10, type SB_GB: wirelen solved = 864, spread = 873, lega
 Info:     at iteration #10, type ALL: wirelen solved = 283, spread = 414, legal = 891; time = 0.01s
 Info:     at iteration #11, type ICESTORM_LC: wirelen solved = 341, spread = 494, legal = 896; time = 0.02s
 Info:     at iteration #11, type SB_GB: wirelen solved = 886, spread = 896, legal = 896; time = 0.00s
-Info:     at iteration #11, type ALL: wirelen solved = 286, spread = 423, legal = 867; time = 0.01s
+Info:     at iteration #11, type ALL: wirelen solved = 286, spread = 423, legal = 867; time = 0.02s
 Info:     at iteration #12, type ICESTORM_LC: wirelen solved = 324, spread = 487, legal = 811; time = 0.01s
 Info:     at iteration #12, type SB_GB: wirelen solved = 801, spread = 805, legal = 811; time = 0.00s
-Info:     at iteration #12, type ALL: wirelen solved = 308, spread = 446, legal = 877; time = 0.02s
+Info:     at iteration #12, type ALL: wirelen solved = 308, spread = 446, legal = 877; time = 0.01s
 Info: HeAP Placer Time: 0.46s
 Info:   of which solving equations: 0.31s
 Info:   of which spreading cells: 0.02s

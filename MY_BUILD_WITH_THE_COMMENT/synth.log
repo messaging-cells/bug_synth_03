@@ -259,9 +259,9 @@ Removing unused module `\debounce'.
 Removed 7 unused modules.
 Mapping positional arguments of cell $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.r1 ($paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4).
 Mapping positional arguments of cell $paramod\io_bug_03\MIN_ADDR=0\MAX_ADDR=55\OPER_1=1\REF_VAL_1=23.md_calc_red0 ($paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4).
-Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$382[2].\t1 ($paramod\tree_nand\WIDTH=4).
-Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$381[1].\t1 ($paramod\tree_nand\WIDTH=4).
-Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:27$380[0].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:26$382[2].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:26$381[1].\t1 ($paramod\tree_nand\WIDTH=4).
+Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.$genblock$calc_redun.v:26$380[0].\t1 ($paramod\tree_nand\WIDTH=4).
 Mapping positional arguments of cell $paramod\calc_redun\ASZ=6\DSZ=4\RSZ=4.t1 ($paramod\tree_nand\WIDTH=4).
 
 8.3. Executing PROC pass (convert processes to netlists).
@@ -2120,7 +2120,7 @@ found and reported 0 problems.
 9. Executing ILANG backend.
 Output filename: ../build/bug_03.ilang
 
-End of script. Logfile hash: 649c8294f9
-CPU: user 4.03s system 0.08s, MEM: 63.88 MB total, 23.81 MB resident
+End of script. Logfile hash: a1125d72dd
+CPU: user 3.72s system 0.04s, MEM: 63.88 MB total, 23.81 MB resident
 Yosys 0.9+932 (git sha1 613334d9, gcc 7.4.0-1ubuntu1~18.04.1 -fPIC -Os)
-Time spent: 27% 22x opt_expr (1 sec), 18% 23x opt_clean (0 sec), ...
+Time spent: 27% 22x opt_expr (1 sec), 17% 23x opt_clean (0 sec), ...

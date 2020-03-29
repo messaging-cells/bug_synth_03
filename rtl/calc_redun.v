@@ -10,8 +10,7 @@ module calc_redun
 	input wire [ASZ-1:0] mg_src,
 	input wire [ASZ-1:0] mg_dst,
 	input wire [DSZ-1:0] mg_dat,
-	output wire [RSZ-1:0] redun, 
-	
+	output wire [RSZ-1:0] redun
 );
 
 	parameter MSZ = (ASZ + ASZ + DSZ);

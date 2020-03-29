@@ -2021,7 +2021,7 @@ module \test_top
   wire width 4 \io_BUG_t5.inp0_redun
   attribute \src "bug_03.v:143|io_bug_03.v:62"
   wire width 6 \io_BUG_t5.inp0_src
-  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:21"
+  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:20"
   wire width 16 \io_BUG_t5.md_calc_red0.full_msg
   attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:12"
   wire width 4 \io_BUG_t5.md_calc_red0.mg_dat
@@ -2031,13 +2031,13 @@ module \test_top
   wire width 6 \io_BUG_t5.md_calc_red0.mg_src
   attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:13"
   wire width 4 \io_BUG_t5.md_calc_red0.redun
-  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:10"
   wire width 4 \io_BUG_t5.md_calc_red0.t1.in_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:11"
+  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:11"
   wire \io_BUG_t5.md_calc_red0.t1.out_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:27|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:27|tree_nand.v:10"
   wire width 2 \io_BUG_t5.md_calc_red0.t1.tree_nand_high.in_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:34|tree_nand.v:24|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:65|calc_redun.v:33|tree_nand.v:24|tree_nand.v:10"
   wire width 2 \io_BUG_t5.md_calc_red0.t1.tree_nand_low.in_nand
   attribute \src "bug_03.v:143|io_bug_03.v:30"
   wire \io_BUG_t5.o0_ack
@@ -2051,7 +2051,7 @@ module \test_top
   wire \io_BUG_t5.o0_req
   attribute \src "bug_03.v:143|io_bug_03.v:30"
   wire width 6 \io_BUG_t5.o0_src
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:21"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:20"
   wire width 16 \io_BUG_t5.r1.full_msg
   attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:12"
   wire width 4 \io_BUG_t5.r1.mg_dat
@@ -2061,21 +2061,21 @@ module \test_top
   wire width 6 \io_BUG_t5.r1.mg_src
   attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:13"
   wire width 4 \io_BUG_t5.r1.redun
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:10"
   wire width 4 \io_BUG_t5.r1.t1.in_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:11"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:11"
   wire \io_BUG_t5.r1.t1.out_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:23"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:23"
   wire \io_BUG_t5.r1.t1.out_nand_high
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:22"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:22"
   wire \io_BUG_t5.r1.t1.out_nand_low
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:27|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:27|tree_nand.v:10"
   wire width 2 \io_BUG_t5.r1.t1.tree_nand_high.in_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:27|tree_nand.v:11"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:27|tree_nand.v:11"
   wire \io_BUG_t5.r1.t1.tree_nand_high.out_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:24|tree_nand.v:10"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:24|tree_nand.v:10"
   wire width 2 \io_BUG_t5.r1.t1.tree_nand_low.in_nand
-  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:34|tree_nand.v:24|tree_nand.v:11"
+  attribute \src "bug_03.v:143|io_bug_03.v:75|calc_redun.v:33|tree_nand.v:24|tree_nand.v:11"
   wire \io_BUG_t5.r1.t1.tree_nand_low.out_nand
   attribute \src "bug_03.v:143|io_bug_03.v:43"
   wire width 4 \io_BUG_t5.r_dat1

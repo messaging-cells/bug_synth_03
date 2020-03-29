@@ -1,0 +1,3131 @@
+
+`default_nettype	none
+
+module bin_to_disp
+  (input  i_Clk,      // Main Clock (25 MHz)
+   input  [3:0] i_Binary_Num, 
+   output o_Segment_A,
+   output o_Segment_B,
+   output o_Segment_C,
+   output o_Segment_D,
+   output o_Segment_E,
+   output o_Segment_F,
+   output o_Segment_G
+   );
+
+   reg [6:0]	r_Hex_Encoding = 7'h00;
+   
+	always @(posedge i_Clk)
+	begin
+		case (i_Binary_Num)
+		4'b0000: r_Hex_Encoding <= 7'h7E;
+		4'b0001: r_Hex_Encoding <= 7'h30;
+		4'b0010: r_Hex_Encoding <= 7'h6D;
+		4'b0011: r_Hex_Encoding <= 7'h79;
+		4'b0100: r_Hex_Encoding <= 7'h33;
+		4'b0101: r_Hex_Encoding <= 7'h5B;
+		4'b0110: r_Hex_Encoding <= 7'h5F;
+		4'b0111: r_Hex_Encoding <= 7'h70;
+		4'b1000: r_Hex_Encoding <= 7'h7F;
+		4'b1001: r_Hex_Encoding <= 7'h7B;
+		4'b1010: r_Hex_Encoding <= 7'h77;
+		4'b1011: r_Hex_Encoding <= 7'h1F;
+		4'b1100: r_Hex_Encoding <= 7'h4E;
+		4'b1101: r_Hex_Encoding <= 7'h3D;
+		4'b1110: r_Hex_Encoding <= 7'h4F;
+		4'b1111: r_Hex_Encoding <= 7'h47;
+		endcase
+	end   
+
+  assign o_Segment_A = r_Hex_Encoding[6];
+  assign o_Segment_B = r_Hex_Encoding[5];
+  assign o_Segment_C = r_Hex_Encoding[4];
+  assign o_Segment_D = r_Hex_Encoding[3];
+  assign o_Segment_E = r_Hex_Encoding[2];
+  assign o_Segment_F = r_Hex_Encoding[1];
+  assign o_Segment_G = r_Hex_Encoding[0];
+   
+endmodule
+	
+	
+`default_nettype	none
+
+module debounce 
+	(	input i_Clk,
+		input i_Switch,
+		output o_Switch
+	);
+ 
+  parameter c_DEBOUNCE_LIMIT = 250000;  // 10 ms at 25 MHz
+   
+  reg [17:0] r_Count = 0;
+  reg r_State = 1'b0;
+ 
+  always @(posedge i_Clk)
+  begin
+    // Switch input is different than internal switch value, so an input is
+    // changing.  Increase the counter until it is stable for enough time.  
+    if (i_Switch !== r_State && r_Count < c_DEBOUNCE_LIMIT)
+      r_Count <= r_Count + 1;
+ 
+    // End of counter reached, switch is stable, register it, reset counter
+    else if (r_Count == c_DEBOUNCE_LIMIT)
+    begin
+      r_State <= i_Switch;
+      r_Count <= 0;
+    end 
+ 
+    // Switches are the same state, reset the counter
+    else
+      r_Count <= 0;
+  end
+ 
+  // Assign internal register to output (debounced!)
+  assign o_Switch = r_State;
+ 
+endmodule
+
+
+
+
+
+//--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ASZ + ASZ + DSZ + RSZ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//`define NS_FIFO_SET_IDX(chn, fif, idx) `NS_SEQ_SET(fif``_data[idx], chn)
+
+//`define NS_FIFO_GET_IDX(chn, fif, idx) `NS_SEQ_GET(fif``_data[idx], chn)
+
+/*
+`define NS_FIFO_SET_IDX(chn, fif, idx) \
+	fif``_data[idx][`NS_MG_SRC_SECTION] <= chn``_src; \
+	fif``_data[idx][`NS_MG_DST_SECTION] <= chn``_dst; \
+	fif``_data[idx][`NS_MG_DAT_SECTION] <= chn``_dat; \
+	fif``_data[idx][`NS_MG_RED_SECTION] <= chn``_red; 
+*/
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------
+ // HGLOBAL_V_FILE
+
+`default_nettype	none
+
+
+module tree_nand
+#(parameter WIDTH = 32)
+(
+	input [WIDTH-1:0] in_nand,
+	output            out_nand
+);
+
+generate
+	if(WIDTH == 1) begin
+		assign out_nand = in_nand;
+	end
+	else if(WIDTH == 2) begin
+		assign out_nand = ~(in_nand[0] & in_nand[1]);
+	end
+	else begin
+		wire out_nand_low;
+		wire out_nand_high;
+		tree_nand #(.WIDTH (WIDTH/2))
+			tree_nand_low(.in_nand (in_nand[WIDTH/2-1:0]), .out_nand (out_nand_low));
+
+		tree_nand #(.WIDTH (WIDTH - WIDTH/2))
+			tree_nand_high(.in_nand (in_nand[WIDTH-1:WIDTH/2]), .out_nand (out_nand_high));
+
+		assign out_nand = ~(out_nand_low & out_nand_high);
+	end
+endgenerate
+
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // HGLOBAL_V_FILE
+
+`default_nettype	none
+
+
+module calc_redun
+#(parameter ASZ=6, DSZ=4, RSZ=4)
+(
+	input wire [ASZ-1:0] mg_src,
+	input wire [ASZ-1:0] mg_dst,
+	input wire [DSZ-1:0] mg_dat,
+	output wire [RSZ-1:0] redun
+);
+
+	parameter MSZ = (ASZ + ASZ + DSZ);
+	parameter PART_SZ = (MSZ / RSZ);
+	parameter REST_SZ = (MSZ % RSZ) + PART_SZ;
+	
+	wire [MSZ-1:0] full_msg; 
+
+	assign full_msg = {mg_src, mg_dst, mg_dat};
+
+	genvar ii;
+	
+	for(ii = 0; ii < RSZ-1; ii = ii+1) begin
+		localparam hi_lim = (((ii+1)*PART_SZ)-1);
+		localparam low_lim = (ii*PART_SZ);
+		tree_nand #(.WIDTH(PART_SZ)) 
+			t1 (full_msg[hi_lim:low_lim], redun[ii]);
+	end
+	
+	tree_nand #(.WIDTH(REST_SZ)) 
+		t1 (full_msg[MSZ-1:((RSZ-1)*PART_SZ)], redun[RSZ-1]);
+	
+	
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // HGLOBAL_V_FILE
+
+`default_nettype	none
+
+module nd_1to2
+#(parameter 
+	OPER_1=1, 
+	REF_VAL_1=0, 
+	IS_RANGE=0, 
+	OPER_2=1, 
+	REF_VAL_2=0, 
+	
+	FSZ=1, 
+	ASZ=6, 
+	DSZ=4, 
+	RSZ=4
+)(
+	input wire i_clk,
+	input wire out_clk,
+	input wire reset,
+	output wire ready,
+	
+	
+	
+	output wire [ASZ-1:0] snd0_src,
+	output wire [ASZ-1:0] snd0_dst,
+	output wire [DSZ-1:0] snd0_dat,
+	output wire [RSZ-1:0] snd0_red,
+	output wire snd0_req,
+	input wire snd0_ack,
+	
+	
+	input wire [ASZ-1:0] rcv0_src,
+	input wire [ASZ-1:0] rcv0_dst,
+	input wire [DSZ-1:0] rcv0_dat,
+	input wire [RSZ-1:0] rcv0_red,
+	input wire rcv0_req,
+	output wire rcv0_ack,
+	
+	
+	input wire dbg_clk,
+	input wire dbg_doit,
+	input wire [7:0] dbg_case,
+	output wire [3:0] dbg_leds,
+	output wire [3:0] dbg_disp0,
+	output wire [3:0] dbg_disp1
+);
+	
+	reg [3:0] rg_dbg_leds = 0;
+	reg [3:0] rg_dbg_disp0 = 0;
+	reg [3:0] rg_dbg_disp1 = 0;
+	reg [DSZ-1:0] out0_ck_dat = 15;
+	reg [0:0] out0_did_ck = 0;
+	
+	reg [0:0] rg_rdy = 0;
+
+	// out1 regs
+	
+	reg [ASZ-1:0] rgo0_src = 0;
+	reg [ASZ-1:0] rgo0_dst = 0;
+	reg [DSZ-1:0] rgo0_dat = 0;
+	reg [RSZ-1:0] rgo0_red = 0;
+
+	reg [0:0] rgo0_req = 0;
+	reg [0:0] rgo0_busy = 0;
+	reg [0:0] rgo0_added_hd = 0;
+
+	// inp regs
+	reg [0:0] rgi0_ack = 0;
+
+	// fifos
+	
+	integer bf0ii=0;
+	reg [0:0] bf0_busy [FSZ-1:0];
+	reg [(ASZ + ASZ + DSZ + RSZ)-1:0] bf0_data[FSZ-1:0];
+	reg [((FSZ == 4)?(2):(1))-1:0] bf0_hd_idx = 0;
+	reg [((FSZ == 4)?(2):(1))-1:0] bf0_tl_idx = 0;
+	wire bf0_hd_eq_tl = (bf0_hd_idx == bf0_tl_idx);
+	wire bf0_hd_busy = bf0_busy[bf0_hd_idx];
+	wire bf0_tl_busy = (bf0_hd_eq_tl)?(bf0_hd_busy):(bf0_busy[bf0_tl_idx]);
+
+	always @(posedge i_clk)
+	begin
+		if(reset) begin
+			rg_rdy <= 0;
+		end
+		if(! reset && ! rg_rdy) begin
+			rg_rdy <= 1;
+			
+			
+	rgo0_src <= 0;
+	rgo0_dst <= 0;
+	rgo0_dat <= 0;
+	rgo0_red <= 0;
+
+			rgo0_req <= 0;
+			rgo0_busy = 0;
+			rgo0_added_hd = 0;
+			
+			rgi0_ack <= 0;
+			
+			
+	for(bf0ii = 0; bf0ii < FSZ; bf0ii = bf0ii+1) begin
+		bf0_busy[bf0ii] <= 0;
+	end
+	for(bf0ii = 0; bf0ii < FSZ; bf0ii = bf0ii+1) begin
+		bf0_data[bf0ii] <= 0;
+	end
+	bf0_hd_idx <= 0;
+	bf0_tl_idx <= 0;
+		end
+		if(! reset && rg_rdy) begin
+			if(rcv0_req && (! rgi0_ack)) begin
+				//`NS_FIFO_TRY_ADD_HEAD(bf0, rcv0, rgo0_added_hd);
+				//if((REF_VAL_1) > (rcv0_dst)) begin
+				//if(`NS_RANGE_CMP_OP(IS_RANGE, OPER_1, REF_VAL_1, rcv0_dst, OPER_2, REF_VAL_2, rcv0_dst)) begin
+				if((
+	(OPER_1 == 1)?
+		((REF_VAL_1) > (rcv0_dst)):(
+	(OPER_1 == 2)?
+		((REF_VAL_1) >= (rcv0_dst)):(
+	(OPER_1 == 3)?
+		((REF_VAL_1) < (rcv0_dst)):(
+	(OPER_1 == 4)?
+		((REF_VAL_1) <= (rcv0_dst)):(
+		(REF_VAL_1) == (rcv0_dst)
+	)))))) begin
+					
+	if((! bf0_hd_busy) && (! rgo0_added_hd)) begin
+		bf0_busy[bf0_hd_idx] <= 1;
+		bf0_data[bf0_hd_idx] <= {rcv0_src, rcv0_dst, rcv0_dat, rcv0_red};;
+		
+	if(bf0_hd_idx == (FSZ-1)) begin
+		bf0_hd_idx <= 0;
+	end else begin
+		bf0_hd_idx <= bf0_hd_idx + 1;
+	end;
+		rgo0_added_hd <= 1;
+	end;
+				end 
+				else begin
+					rg_dbg_leds[1:1] <= 1;
+				end
+			end
+			
+			
+	if(rgo0_added_hd) begin
+		rgo0_added_hd <= 0;
+		rgi0_ack <= 1;
+	end
+			
+			
+	
+	if(bf0_tl_busy && ! rgo0_busy) begin
+		bf0_busy[bf0_tl_idx] <= 0;
+		rgo0_busy <= 1;
+		
+	rgo0_src <= bf0_data[bf0_tl_idx][((ASZ + ASZ + DSZ + RSZ)-1):(ASZ + DSZ + RSZ)];
+	rgo0_dst <= bf0_data[bf0_tl_idx][((ASZ + DSZ + RSZ)-1):(DSZ + RSZ)];
+	rgo0_dat <= bf0_data[bf0_tl_idx][((DSZ + RSZ)-1):RSZ];
+	rgo0_red <= bf0_data[bf0_tl_idx][(RSZ-1):0];;
+		
+	if(bf0_tl_idx == (FSZ-1)) begin
+		bf0_tl_idx <= 0;
+	end else begin
+		bf0_tl_idx <= bf0_tl_idx + 1;
+	end;
+	end
+	if(rgo0_busy) begin
+		if(! rgo0_req && ! snd0_ack) begin
+			rgo0_req <= 1;
+		end
+		if(rgo0_req && snd0_ack) begin
+			rgo0_busy <= 0;
+			rgo0_req <= 0;
+		end
+	end;
+			
+			
+			if(rgo0_busy && ! out0_did_ck && (rg_dbg_leds[0:0] == 0)) begin 
+				out0_did_ck <= 1;
+				if(out0_ck_dat == 15) begin
+					out0_ck_dat <= rgo0_dat;
+				end
+				else begin
+					if(out0_ck_dat == rgo0_dat) begin
+						rg_dbg_leds[0:0] = 1;
+						rg_dbg_disp0 <= out0_ck_dat[3:0];
+						rg_dbg_disp1 <= rgo0_dat[3:0];
+					end
+					else begin
+						out0_ck_dat <= rgo0_dat;
+					end
+				end
+			end
+			if(! rgo0_busy && out0_did_ck) begin
+				out0_did_ck <= 0;
+			end
+			
+			if((! rcv0_req) && rgi0_ack) begin
+				rgi0_ack <= 0;
+			end
+		end
+	end
+
+	/*
+	always @(posedge out_clk)
+	begin
+		if(i0_req && (! inp0_ack)) begin
+			inp0_ack <= `NS_ON;
+		end
+		//else
+		if((! i0_req) && inp0_ack) begin
+			inp0_ack <= `NS_OFF;
+		end
+	end
+	*/
+	
+	assign ready = rg_rdy;
+	
+	//out1
+	
+	assign snd0_src = rgo0_src;
+	assign snd0_dst = rgo0_dst;
+	assign snd0_dat = rgo0_dat;
+	assign snd0_red = rgo0_red;
+
+	assign snd0_req = rgo0_req;
+
+	//inp0
+	assign rcv0_ack = rgi0_ack;
+
+	
+	assign dbg_leds = rg_dbg_leds;
+	assign dbg_disp0 = rg_dbg_disp0;
+	assign dbg_disp1 = rg_dbg_disp1;
+	
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // HGLOBAL_V_FILE
+
+`default_nettype	none
+
+
+
+
+
+
+
+
+module io_bug_03
+#(parameter 
+	MIN_ADDR=1, 
+	MAX_ADDR=1, 
+	OPER_1=1, 
+	REF_VAL_1=0, 
+	IS_RANGE=0, 
+	OPER_2=1, 
+	REF_VAL_2=0, 
+	ASZ=6, 
+	DSZ=4, 
+	RSZ=4
+)(
+	input wire src0_clk,
+	input wire snk0_clk,
+	
+	// SRC
+	
+	
+	output wire [ASZ-1:0] o0_src,
+	output wire [ASZ-1:0] o0_dst,
+	output wire [DSZ-1:0] o0_dat,
+	output wire [RSZ-1:0] o0_red,
+	output wire o0_req,
+	input wire o0_ack,
+	
+	// SNK_0
+	
+	
+	input wire [ASZ-1:0] i0_src,
+	input wire [ASZ-1:0] i0_dst,
+	input wire [DSZ-1:0] i0_dat,
+	input wire [RSZ-1:0] i0_red,
+	input wire i0_req,
+	output wire i0_ack,
+	
+	
+	input wire dbg_clk,
+	input wire dbg_doit,
+	input wire [7:0] dbg_case,
+	output wire [3:0] dbg_leds,
+	output wire [3:0] dbg_disp0,
+	output wire [3:0] dbg_disp1
+);
+	
+	reg [3:0] rg_dbg_leds = 0;
+	reg [3:0] rg_dbg_disp0 = 0;
+	reg [3:0] rg_dbg_disp1 = 0;
+	reg [RSZ-1:0] err_mg_redun = 0;
+
+	reg [3:0] cnt_0 = 0;
+	reg [3:0] cnt_1 = 0;
+
+	reg [DSZ-1:0] r_dat1 = 0;
+	
+	// SRC regs
+	reg [0:0] ro0_has_dst = 0;	
+	reg [0:0] ro0_has_dat = 0;	
+	reg [0:0] ro0_has_red = 0;	
+	reg [0:0] ro0_busy = 0;	
+	reg [ASZ-1:0] ro0_src = 9;
+	reg [DSZ-1:0] ro0_dat = 0;
+	reg [ASZ-1:0] ro0_dst = MIN_ADDR;
+	reg [RSZ-1:0] ro0_red = 0;
+	reg [0:0] ro0_req = 0;
+	reg [0:0] ro0_err = 0;
+	
+	// SNK_0 regs
+ 	reg [3:0] err0_case = 0;
+	reg [0:0] has_inp0 = 0;
+	reg [0:0] inp0_has_redun = 0;
+	reg [0:0] inp0_done_cks = 0;
+	
+	reg [ASZ-1:0] inp0_src = 0;
+	reg [ASZ-1:0] inp0_dst = 0;
+	reg [DSZ-1:0] inp0_dat = 0;
+	reg [RSZ-1:0] inp0_red = 0;
+
+	wire [RSZ-1:0] inp0_calc_redun;
+	reg [RSZ-1:0] inp0_redun = 0;
+	calc_redun #(.ASZ(ASZ), .DSZ(DSZ), .RSZ(RSZ)) 
+		md_calc_red0 (inp0_src, inp0_dst, inp0_dat, inp0_calc_redun);
+	
+	
+	reg [0:0] inp0_ack = 0;
+	reg [DSZ-1:0] inp0_ck_dat = 15;
+	reg [0:0] inp0_err = 0;
+
+
+	wire [RSZ-1:0] ro0_redun;
+	calc_redun #(.ASZ(ASZ), .DSZ(DSZ), .RSZ(RSZ)) 
+		r1 (ro0_src, ro0_dst, ro0_dat, ro0_redun);
+	
+	//SRC
+	always @(posedge src0_clk)
+	begin
+		if((! ro0_req) && (! o0_ack)) begin
+			if(! ro0_has_dst) begin
+				ro0_has_dst <= 1;
+				//ro0_dst <= `NS_DBG_NXT_ADDR(ro0_dst);
+				ro0_dst <= 10;
+			end
+			else
+			if(! ro0_has_dat) begin
+				ro0_has_dat <= 1;
+				if(! (
+	(IS_RANGE == 1)?((
+	(OPER_1 == 1)?
+		((REF_VAL_1) > (ro0_dst)):(
+	(OPER_1 == 2)?
+		((REF_VAL_1) >= (ro0_dst)):(
+	(OPER_1 == 3)?
+		((REF_VAL_1) < (ro0_dst)):(
+	(OPER_1 == 4)?
+		((REF_VAL_1) <= (ro0_dst)):(
+		(REF_VAL_1) == (ro0_dst)
+	))))) && (
+	(OPER_2 == 1)?
+		((REF_VAL_2) > (ro0_dst)):(
+	(OPER_2 == 2)?
+		((REF_VAL_2) >= (ro0_dst)):(
+	(OPER_2 == 3)?
+		((REF_VAL_2) < (ro0_dst)):(
+	(OPER_2 == 4)?
+		((REF_VAL_2) <= (ro0_dst)):(
+		(REF_VAL_2) == (ro0_dst)
+	)))))):((
+	(OPER_1 == 1)?
+		((REF_VAL_1) > (ro0_dst)):(
+	(OPER_1 == 2)?
+		((REF_VAL_1) >= (ro0_dst)):(
+	(OPER_1 == 3)?
+		((REF_VAL_1) < (ro0_dst)):(
+	(OPER_1 == 4)?
+		((REF_VAL_1) <= (ro0_dst)):(
+		(REF_VAL_1) == (ro0_dst)
+	)))))) )) begin
+					ro0_dat[3:0] <= cnt_0;
+					cnt_0 <= cnt_0 + 1;
+				end else begin
+					ro0_dat[3:0] <= cnt_1;
+					cnt_1 <= cnt_1 + 1;
+				end
+			end
+			else
+			if(! ro0_has_red) begin
+				ro0_has_red <= 1;
+				ro0_red <= ro0_redun;
+			end
+			if(ro0_has_red) begin
+				ro0_req <= 1;
+			end
+		end
+		if(ro0_req && o0_ack) begin
+			ro0_has_dst <= 0;
+			ro0_has_dat <= 0;
+			ro0_has_red <= 0;
+			ro0_req <= 0;
+		end
+	end
+	
+	
+	//SNK_0
+	always @(posedge snk0_clk)
+	begin
+		if(i0_req && (! inp0_ack)) begin
+			if(! has_inp0) begin
+				has_inp0 <= 1;
+				
+	inp0_src <= i0_src;
+	inp0_dst <= i0_dst;
+	inp0_dat <= i0_dat;
+	inp0_red <= i0_red;
+			end
+			else
+			if(! inp0_has_redun) begin
+				inp0_has_redun <= 1;
+				inp0_redun <= inp0_calc_redun;
+			end
+			else
+			if(! inp0_done_cks) begin
+				inp0_done_cks <= 1;
+				if(! inp0_err) begin
+					if(inp0_red != inp0_redun) begin
+						inp0_err <= 1;
+					end
+
+					if((inp0_ck_dat <= 14) && ((inp0_ck_dat + 1) != inp0_dat)) begin
+						inp0_err <= 1;
+						
+						rg_dbg_disp0 <= inp0_ck_dat[3:0];
+						rg_dbg_disp1 <= inp0_dat[3:0];
+					end 
+					else 
+					begin 
+						inp0_ck_dat <= inp0_dat;
+					end
+				end
+			end
+			if(inp0_done_cks) begin
+				has_inp0 <= 0;
+				inp0_has_redun <= 0;
+				inp0_done_cks <= 0;
+				
+				inp0_ack <= 1;
+			end
+		end
+		//else
+		if((! i0_req) && inp0_ack) begin
+			inp0_ack <= 0;
+		end
+	end
+	
+	//SRC
+	
+	assign o0_src = ro0_src;
+	assign o0_dst = ro0_dst;
+	assign o0_dat = ro0_dat;
+	assign o0_red = ro0_red;
+
+	assign o0_req = ro0_req;
+
+	//SNK_0
+	assign i0_ack = inp0_ack;
+	
+	//`NS_ASSIGN_OUT_DBG(dbg, rg_dbg)
+	assign dbg_leds[0:0] = inp0_err;
+	assign dbg_leds[1:1] = 0;
+	assign dbg_leds[2:2] = ro0_err;
+	assign dbg_leds[3:3] = 0;
+	assign dbg_disp0 = rg_dbg_disp0;
+	assign dbg_disp1 = rg_dbg_disp1;
+	
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // HGLOBAL_V_FILE
+
+`default_nettype	none
+
+
+
+
+
+
+module test_top 
+#(parameter ASZ=6, DSZ=4, RSZ=4)
+(
+	input  i_clk,      // Main Clock (25 MHz)
+	input  i_Switch_1, 
+	input  i_Switch_2, 
+	input  i_Switch_3, 
+	input  i_Switch_4, 
+	
+	output o_Segment1_A,
+	output o_Segment1_B,
+	output o_Segment1_C,
+	output o_Segment1_D,
+	output o_Segment1_E,
+	output o_Segment1_F,
+	output o_Segment1_G,
+	
+	output o_Segment2_A,
+	output o_Segment2_B,
+	output o_Segment2_C,
+	output o_Segment2_D,
+	output o_Segment2_E,
+	output o_Segment2_F,
+	output o_Segment2_G,
+	output o_LED_1,
+	output o_LED_2,
+	output o_LED_3,
+	output o_LED_4
+	);
+
+	reg [0:0] the_reset = 0;
+	wire the_all_ready;
+
+	reg [2:0] cnt_clk0 = 0;
+	reg [3:0] cnt_clk1 = 0;
+	reg [5:0] cnt_clk2 = 0;
+	reg [7:0] cnt_clk3 = 0;
+	reg [11:0] cnt_clk4 = 0;
+	
+	reg clk_0 = 0;
+	reg clk_1 = 0;
+	reg clk_2 = 0;
+	reg clk_3 = 0;
+	reg clk_4 = 0;
+	
+	
+	wire [0:0] dbg0_doit;
+	wire [7:0] dbg0_case;
+	wire [3:0] dbg0_leds;
+	wire [3:0] dbg0_disp0;
+	wire [3:0] dbg0_disp1;
+	
+	wire [0:0] dbg1_doit;
+	wire [7:0] dbg1_case;
+	wire [3:0] dbg1_leds;
+	wire [3:0] dbg1_disp0;
+	wire [3:0] dbg1_disp1;
+
+	// LNK_0
+	
+	wire [ASZ-1:0] lnk_0_src;
+	wire [ASZ-1:0] lnk_0_dst;
+	wire [DSZ-1:0] lnk_0_dat;
+	wire [RSZ-1:0] lnk_0_red;
+	wire lnk_0_req;
+	wire lnk_0_ack;
+	
+	// LNK_2
+	
+	wire [ASZ-1:0] lnk_1_src;
+	wire [ASZ-1:0] lnk_1_dst;
+	wire [DSZ-1:0] lnk_1_dat;
+	wire [RSZ-1:0] lnk_1_red;
+	wire lnk_1_req;
+	wire lnk_1_ack;
+
+	wire w_Segment1_A;
+	wire w_Segment1_B;
+	wire w_Segment1_C;
+	wire w_Segment1_D;
+	wire w_Segment1_E;
+	wire w_Segment1_F;
+	wire w_Segment1_G;
+	
+	wire w_Segment2_A;
+	wire w_Segment2_B;
+	wire w_Segment2_C;
+	wire w_Segment2_D;
+	wire w_Segment2_E;
+	wire w_Segment2_F;
+	wire w_Segment2_G;
+
+	always @(posedge i_clk)
+	begin
+		// clk_0
+		if(cnt_clk0 == 0) begin
+			cnt_clk0 <= 1;
+			clk_0 <= ~clk_0;
+		end
+		else  begin
+			cnt_clk0 <= (cnt_clk0 << 1);
+		end
+		// clk_1
+		if(cnt_clk1 == 0) begin
+			cnt_clk1 <= 1;
+			clk_1 <= ~clk_1;
+		end
+		else  begin
+			cnt_clk1 <= (cnt_clk1 << 1);
+		end
+		// clk_2
+		if(cnt_clk2 == 0) begin
+			cnt_clk2 <= 1;
+			clk_2 <= ~clk_2;
+		end
+		else  begin
+			cnt_clk2 <= (cnt_clk2 << 1);
+		end
+		// clk_3
+		if(cnt_clk3 == 0) begin
+			cnt_clk3 <= 1;
+			clk_3 <= ~clk_3;
+		end
+		else  begin
+			cnt_clk3 <= (cnt_clk3 << 1);
+		end
+		// clk_4
+		if(cnt_clk4 == 0) begin
+			cnt_clk4 <= 1;
+			clk_4 <= ~clk_4;
+		end
+		else  begin
+			cnt_clk4 <= (cnt_clk4 << 1);
+		end
+	end
+	
+	nd_1to2 #(.OPER_1(1), .REF_VAL_1(23))
+	gt_BUG_t5 (
+		.i_clk(i_clk),
+		.out_clk(i_clk),
+		// i_clk clk_0
+		
+		.reset(the_reset),
+		.ready(the_all_ready),
+		
+		//.i_clk(i_clk),
+		// out0
+		
+	.snd0_src(lnk_0_src),
+	.snd0_dst(lnk_0_dst),
+	.snd0_dat(lnk_0_dat),
+	.snd0_red(lnk_0_red),
+	.snd0_req(lnk_0_req),
+	.snd0_ack(lnk_0_ack),
+		// in
+		
+	.rcv0_src(lnk_1_src),
+	.rcv0_dst(lnk_1_dst),
+	.rcv0_dat(lnk_1_dat),
+	.rcv0_red(lnk_1_red),
+	.rcv0_req(lnk_1_req),
+	.rcv0_ack(lnk_1_ack),
+
+		
+	.dbg_clk(i_clk),
+	.dbg_doit(dbg0_doit),
+	.dbg_case(dbg0_case),
+	.dbg_leds(dbg0_leds),
+	.dbg_disp0(dbg0_disp0),
+	.dbg_disp1(dbg0_disp1)
+	);
+
+	io_bug_03 #(.MIN_ADDR(0), .MAX_ADDR(55), .OPER_1(1), .REF_VAL_1(23))
+	io_BUG_t5 (
+		.src0_clk(clk_0),
+		.snk0_clk(clk_3),
+		//i_clk, clk_0, clk_1
+		// clk 0, 3, 3 fails
+		
+		// SRC
+		
+	.o0_src(lnk_1_src),
+	.o0_dst(lnk_1_dst),
+	.o0_dat(lnk_1_dat),
+	.o0_red(lnk_1_red),
+	.o0_req(lnk_1_req),
+	.o0_ack(lnk_1_ack),
+		// SNK0
+		
+	.i0_src(lnk_0_src),
+	.i0_dst(lnk_0_dst),
+	.i0_dat(lnk_0_dat),
+	.i0_red(lnk_0_red),
+	.i0_req(lnk_0_req),
+	.i0_ack(lnk_0_ack),
+		
+		
+	.dbg_clk(i_clk),
+	.dbg_doit(dbg1_doit),
+	.dbg_case(dbg1_case),
+	.dbg_leds(dbg1_leds),
+	.dbg_disp0(dbg1_disp0),
+	.dbg_disp1(dbg1_disp1)
+	);
+
+	bin_to_disp Id0(
+	.i_Clk(i_clk),
+	.i_Binary_Num(dbg1_disp0),
+	//.i_Binary_Num(dbg0_disp0),
+	.o_Segment_A(w_Segment1_A),
+	.o_Segment_B(w_Segment1_B),
+	.o_Segment_C(w_Segment1_C),
+	.o_Segment_D(w_Segment1_D),
+	.o_Segment_E(w_Segment1_E),
+	.o_Segment_F(w_Segment1_F),
+	.o_Segment_G(w_Segment1_G)
+	);
+	
+	// Instantiate Binary to 7-Segment Converter
+	bin_to_disp Id1(
+	.i_Clk(i_clk),
+	.i_Binary_Num(dbg1_disp1),
+	//.i_Binary_Num(dbg0_disp1),
+	.o_Segment_A(w_Segment2_A),
+	.o_Segment_B(w_Segment2_B),
+	.o_Segment_C(w_Segment2_C),
+	.o_Segment_D(w_Segment2_D),
+	.o_Segment_E(w_Segment2_E),
+	.o_Segment_F(w_Segment2_F),
+	.o_Segment_G(w_Segment2_G)
+	);
+
+	assign o_Segment1_A = ~w_Segment1_A;
+	assign o_Segment1_B = ~w_Segment1_B;
+	assign o_Segment1_C = ~w_Segment1_C;
+	assign o_Segment1_D = ~w_Segment1_D;
+	assign o_Segment1_E = ~w_Segment1_E;
+	assign o_Segment1_F = ~w_Segment1_F;
+	assign o_Segment1_G = ~w_Segment1_G;
+	
+	assign o_Segment2_A = ~w_Segment2_A;
+	assign o_Segment2_B = ~w_Segment2_B;
+	assign o_Segment2_C = ~w_Segment2_C;
+	assign o_Segment2_D = ~w_Segment2_D;
+	assign o_Segment2_E = ~w_Segment2_E;
+	assign o_Segment2_F = ~w_Segment2_F;
+	assign o_Segment2_G = ~w_Segment2_G;
+
+	assign o_LED_1 = 0;
+	assign o_LED_2 = dbg0_leds[0:0];
+	assign o_LED_3 = dbg0_leds[1:1];
+	assign o_LED_4 = 0;
+	
+	//assign o_LED_1 = dbg1_leds[0:0];
+	//assign o_LED_2 = dbg1_leds[1:1];
+	//assign o_LED_3 = dbg1_leds[2:2];
+	//assign o_LED_4 = dbg1_leds[3:3];
+	
+	
+endmodule

@@ -57,7 +57,7 @@
 	input wire [7:0] dbg``_case, \
 	output wire [3:0] dbg``_leds, \
 	output wire [3:0] dbg``_disp0, \
-	output wire [3:0] dbg``_disp1, 
+	output wire [3:0] dbg``_disp1
 
 
 `define NS_DECLARE_DBG_LINK(lnk) \
@@ -74,7 +74,7 @@
 	.chn``_case(lnk``_case), \
 	.chn``_leds(lnk``_leds), \
 	.chn``_disp0(lnk``_disp0), \
-	.chn``_disp1(lnk``_disp1), 
+	.chn``_disp1(lnk``_disp1)
 
 
 `define NS_DECLARE_REG_DBG(lnk) \
@@ -112,14 +112,14 @@
 	input wire [ASZ-1:0] mg``_src, \
 	input wire [ASZ-1:0] mg``_dst, \
 	input wire [DSZ-1:0] mg``_dat, \
-	input wire [RSZ-1:0] mg``_red, \
+	input wire [RSZ-1:0] mg``_red
 
 
 `define NS_DECLARE_OUT_MSG(mg) \
 	output wire [ASZ-1:0] mg``_src, \
 	output wire [ASZ-1:0] mg``_dst, \
 	output wire [DSZ-1:0] mg``_dat, \
-	output wire [RSZ-1:0] mg``_red, \
+	output wire [RSZ-1:0] mg``_red
 
 
 `define NS_ASSIGN_OUT_MSG(ou, mg) \
@@ -144,15 +144,15 @@
 
 
 `define NS_DECLARE_OUT_CHNL(nam) \
-	`NS_DECLARE_OUT_MSG(nam) \
+	`NS_DECLARE_OUT_MSG(nam), \
 	output wire nam``_req, \
-	input wire nam``_ack, 
+	input wire nam``_ack
 
 
 `define NS_DECLARE_IN_CHNL(nam) \
-	`NS_DECLARE_IN_MSG(nam) \
+	`NS_DECLARE_IN_MSG(nam), \
 	input wire nam``_req, \
-	output wire nam``_ack, 
+	output wire nam``_ack
 
 
 `define NS_DECLARE_LINK(lnk) \
@@ -170,7 +170,7 @@
 	.chn``_dat(lnk``_dat), \
 	.chn``_red(lnk``_red), \
 	.chn``_req(lnk``_req), \
-	.chn``_ack(lnk``_ack), 
+	.chn``_ack(lnk``_ack)
 
 	
 `define NS_REG_MSG_INIT(mg) \
@@ -200,7 +200,6 @@
 	end \
 	fif``_hd_idx <= 0; \
 	fif``_tl_idx <= 0;
-
 
 
 `define NS_GET_SEQ_MSG(chn) {chn``_src, chn``_dst, chn``_dat, chn``_red}
@@ -287,7 +286,7 @@
 		fif``_busy[fif``_tl_idx] <= `NS_OFF; \
 		out_is_busy <= `NS_ON; \
 		`NS_FIFO_GET_IDX(mg_out, fif, fif``_tl_idx); \
-		`NS_INC_IDX(fif``_tl_idx); \
+		`NS_INC_IDX(fif``_tl_idx, FSZ); \
 	end
 
 
@@ -321,13 +320,13 @@
 `define NS_DECLARE_PAKOUT_CHNL(nam) \
 	output wire [PSZ-1:0] nam``_pakio, \
 	output wire nam``_req, \
-	input wire nam``_ack, 
+	input wire nam``_ack
 
 
 `define NS_DECLARE_PAKIN_CHNL(nam) \
 	input wire [PSZ-1:0] nam``_pakio, \
 	input wire nam``_req, \
-	output wire nam``_ack, 
+	output wire nam``_ack
 
 
 `define NS_DECLARE_PAKIO_LINK(lnk) \
@@ -339,7 +338,7 @@
 `define NS_INSTA_PAKIO_CHNL(chn, lnk) \
 	.chn``_pakio(lnk``_pakio), \
 	.chn``_req(lnk``_req), \
-	.chn``_ack(lnk``_ack), 
+	.chn``_ack(lnk``_ack)
 
 
 `define NS_PACKETS_INIT(pks, busy_init) \

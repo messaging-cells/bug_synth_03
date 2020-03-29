@@ -16,7 +16,7 @@ generate
 		assign out_nand = in_nand;
 	end
 	else if(WIDTH == 2) begin
-		assign out_nand = in_nand[0] ~& in_nand[1];
+		assign out_nand = ~(in_nand[0] & in_nand[1]);
 	end
 	else begin
 		wire out_nand_low;
@@ -27,7 +27,7 @@ generate
 		tree_nand #(.WIDTH (WIDTH - WIDTH/2))
 			tree_nand_high(.in_nand (in_nand[WIDTH-1:WIDTH/2]), .out_nand (out_nand_high));
 
-		assign out_nand = out_nand_low ~& out_nand_high;
+		assign out_nand = ~(out_nand_low & out_nand_high);
 	end
 endgenerate
 

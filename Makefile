@@ -9,6 +9,7 @@ YOSYS_EXE = yosys
 NEXTPNR_EXE = nextpnr-ice40
 ICEPACK_EXE = icepack
 ICEPROG_EXE = iceprog
+ICAVERILOG_EXE = iverilog
 
 RTL_DIR = rtl
 CHECK_DIR = ck_formal
@@ -44,6 +45,23 @@ ${PRJ_PREFIX}.json : ${RTL_FILES}
 prog:
 	sudo ${ICEPROG_EXE} -b ${PRJ_PREFIX}.bin
 	
+
+.PHONY: ivl
+ivl: ${PRJ_PREFIX}.vvp
+	@echo "Finished building "${PRJ_PREFIX}.vvp
+
+${PRJ_PREFIX}.vvp : ${RTL_FILES}
+	mkdir -p ${BUILD_DIR}; rm ${PRJ_PREFIX}.vvp; cd ${RTL_DIR}; \
+	${ICAVERILOG_EXE} -Wall -g2005 -s test_top -f commands.ivl -o ../${PRJ_PREFIX}.vvp
+
+.PHONY: pre_ivl
+pre_ivl: ${PRJ_PREFIX}.ivl
+	@echo "Finished building "${PRJ_PREFIX}.vvp
+
+${PRJ_PREFIX}.ivl : ${RTL_FILES}
+	mkdir -p ${BUILD_DIR}; rm ${PRJ_PREFIX}.ivl; cd ${RTL_DIR}; \
+	${ICAVERILOG_EXE} -Wall -g2005 -E -s test_top -f commands.ivl -o ../${PRJ_PREFIX}.ivl
+
 
 .PHONY: check
 check:

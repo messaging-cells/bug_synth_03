@@ -133,9 +133,9 @@ module test_top
 		
 		//.i_clk(i_clk),
 		// out0
-		`NS_INSTA_CHNL(snd0, lnk_0)
+		`NS_INSTA_CHNL(snd0, lnk_0),
 		// in
-		`NS_INSTA_CHNL(rcv0, lnk_1)
+		`NS_INSTA_CHNL(rcv0, lnk_1),
 
 		`NS_INSTA_DBG_CHNL(dbg, dbg0, i_clk)
 	);
@@ -148,9 +148,9 @@ module test_top
 		// clk 0, 3, 3 fails
 		
 		// SRC
-		`NS_INSTA_CHNL(o0, lnk_1)
+		`NS_INSTA_CHNL(o0, lnk_1),
 		// SNK0
-		`NS_INSTA_CHNL(i0, lnk_0)
+		`NS_INSTA_CHNL(i0, lnk_0),
 		
 		`NS_INSTA_DBG_CHNL(dbg, dbg1, i_clk)
 	);

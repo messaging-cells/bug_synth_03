@@ -21,8 +21,8 @@ module nd_1to2
 	input wire reset,
 	output wire ready,
 	
-	`NS_DECLARE_OUT_CHNL(snd0)
-	`NS_DECLARE_IN_CHNL(rcv0)
+	`NS_DECLARE_OUT_CHNL(snd0),
+	`NS_DECLARE_IN_CHNL(rcv0),
 	
 	`NS_DECLARE_DBG_CHNL(dbg)
 );
